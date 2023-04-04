@@ -1,0 +1,36 @@
+<script lang="ts">
+	import devices from '$lib/assets/devices.svg';
+	import CheckItem from '$lib/components/CheckItem.svelte';
+	import { Button, Heading, Img, P } from 'flowbite-svelte';
+</script>
+
+<section class="bg-white">
+	<div
+		class="flex flex-col justify-between gap-2 py-8 px-4 mx-auto max-w-screen-xl lg:py-32 lg:px-12 lg:flex-row"
+	>
+		<div class="w-full text-start">
+			<Heading tag="h6" class="text-blue-500 mb-4">AUTHENTICATION FOR THE PASSKEY ERA</Heading>
+			<Heading tag="h2" class="mb-8">Corbado offers Passkeys-as-a-Service</Heading>
+			<P class="mb-8">
+				We help you transition your customers to passkeys risk-free by taking care of all
+				cross-platform aspects. Provide the ebst passwordless login experience.
+			</P>
+			<Button
+				href="https://app.corbado.com/signin#register"
+				pill
+				target="_blank"
+				class="bg-primary text-white"
+			>
+				Start for free
+			</Button>
+			<div class="flex flex-col lg:flex-row mt-8 gap-4 mb-4 lg:mb-0">
+				<CheckItem title="iOS 16 passkeys" />
+				<CheckItem title="Integration in <1h" />
+				<CheckItem title="GDPR compliant" />
+			</div>
+		</div>
+		<div class="w-full">
+			<Img src={devices} size="max-w-full" alt="authentication sample" />
+		</div>
+	</div>
+</section>
