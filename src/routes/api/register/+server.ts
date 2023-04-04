@@ -1,16 +1,10 @@
 import { CORBADO_API_SECRET } from '$env/static/private';
 import { PUBLIC_CORBADO_PROJECT_ID } from '$env/static/public';
-import type { RequestHandler } from '@sveltejs/kit';
+import { error, redirect, type RequestHandler } from '@sveltejs/kit';
 
-interface Corbado {
-	sessionToken: string | null;
-	userAgent: string | null;
-	remoteAddress: string | null;
-}
-
-export const GET = (async ({ url, request, getClientAddress }) => {
-	const corbado: Corbado = {
-		sessionToken: url.searchParams.get('sessionToken'),
+export const GET = (async ({ url, request, getClientAddress, cookies }) => {
+	const corbado = {
+		sessionToken: url.searchParams.get('sessionToken') || '',
 		userAgent: request.headers.get('user-agent'),
 		remoteAddress: getClientAddress()
 	};
@@ -30,6 +24,15 @@ export const GET = (async ({ url, request, getClientAddress }) => {
 		})
 	});
 
-	console.log(await response.json());
-	return new Response('HI');
+	if (response.status !== 200) {
+		throw error(401, 'Invalid session token');
+	}
+
+	cookies.set('jwt', crypto.randomUUID(), {
+		httpOnly: true,
+		path: '/',
+		maxAge: 60 * 60 * 24 // 1 day
+	});
+
+	throw redirect(303, '/');
 }) satisfies RequestHandler;

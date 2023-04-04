@@ -8,12 +8,12 @@
 	<div
 		class="flex flex-col justify-between gap-2 py-8 px-4 mx-auto max-w-screen-xl lg:py-32 lg:px-12 lg:flex-row"
 	>
-		<div class="w-full text-start">
+		<div class="w-full text-center lg:text-start">
 			<Heading tag="h6" class="text-blue-500 mb-4">AUTHENTICATION FOR THE PASSKEY ERA</Heading>
 			<Heading tag="h2" class="mb-8">Corbado offers Passkeys-as-a-Service</Heading>
 			<P class="mb-8">
 				We help you transition your customers to passkeys risk-free by taking care of all
-				cross-platform aspects. Provide the ebst passwordless login experience.
+				cross-platform aspects. Provide the best passwordless login experience.
 			</P>
 			<Button
 				href="https://app.corbado.com/signin#register"
