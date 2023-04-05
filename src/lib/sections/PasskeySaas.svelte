@@ -9,11 +9,10 @@
 		class="flex flex-col justify-between gap-2 py-8 px-4 mx-auto max-w-screen-xl md:py-32 md:px-12 md:flex-row"
 	>
 		<div class="w-full text-center md:text-start">
-			<Heading tag="h6" class="text-info mb-4">AUTHENTICATION FOR THE PASSKEY ERA</Heading>
-			<Heading tag="h2" class="mb-8">Corbado offers Passkeys-as-a-Service</Heading>
+			<Heading tag="h6" class="text-info mb-4">CORBADO OFFERS PASSKEYS-AS-A-SERVICE</Heading>
+			<Heading tag="h2" class="mb-8">How to integrate passkeys?</Heading>
 			<P class="mb-8">
-				We help you transition your customers to passkeys risk-free by taking care of all
-				cross-platform aspects. Provide the best passwordless login experience.
+				Corbado helps you transition your users to passkeys risk-free within &lt1 hour. Provide the best passwordless login experience now.
 			</P>
 			<Button
 				href="https://app.corbado.com/signin#register"
@@ -24,7 +23,7 @@
 				Start for free
 			</Button>
 			<div class="flex flex-col items-center md:flex-row mt-8 gap-4 md:gap-8 mb-4 md:mb-0">
-				<CheckItem title="iOS 16 passkeys" />
+				<CheckItem title="Keep all user data" />
 				<CheckItem title="Integration in <1h" />
 				<CheckItem title="GDPR compliant" />
 			</div>
