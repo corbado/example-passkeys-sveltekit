@@ -6,10 +6,10 @@
 
 <section class="bg-white">
 	<div
-		class="flex flex-col justify-between gap-2 py-8 px-4 mx-auto max-w-screen-xl lg:py-32 lg:px-12 lg:flex-row"
+		class="flex flex-col justify-between gap-2 py-8 px-4 mx-auto max-w-screen-xl md:py-32 md:px-12 md:flex-row"
 	>
-		<div class="w-full text-center lg:text-start">
-			<Heading tag="h6" class="text-blue-500 mb-4">AUTHENTICATION FOR THE PASSKEY ERA</Heading>
+		<div class="w-full text-center md:text-start">
+			<Heading tag="h6" class="text-info mb-4">AUTHENTICATION FOR THE PASSKEY ERA</Heading>
 			<Heading tag="h2" class="mb-8">Corbado offers Passkeys-as-a-Service</Heading>
 			<P class="mb-8">
 				We help you transition your customers to passkeys risk-free by taking care of all
@@ -23,7 +23,7 @@
 			>
 				Start for free
 			</Button>
-			<div class="flex flex-col lg:flex-row mt-8 gap-4 mb-4 lg:mb-0">
+			<div class="flex flex-col items-center md:flex-row mt-8 gap-4 md:gap-8 mb-4 md:mb-0">
 				<CheckItem title="iOS 16 passkeys" />
 				<CheckItem title="Integration in <1h" />
 				<CheckItem title="GDPR compliant" />

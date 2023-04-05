@@ -26,7 +26,7 @@
 
 <section class="bg-white">
 	<div
-		class="flex flex-col justify-between gap-2 py-8 px-4 mx-auto max-w-screen-xl lg:py-32 lg:px-12 lg:flex-row"
+		class="flex flex-col justify-between gap-2 py-8 px-4 mx-auto max-w-screen-xl md:py-32 md:px-12 md:flex-row"
 	>
 		<div class="w-full text-center">
 			<Heading tag="h2" class="mb-32">Stand on the shoulder of giants.</Heading>
@@ -34,7 +34,7 @@
 				{#each timelineItems as timelineItem}
 					<TimelineItem title={timelineItem.title} date={timelineItem.date}>
 						<svelte:fragment slot="icon">
-							<div class="flex items-center">
+							<div class="flex items-center invisible md:visible">
 								<div
 									class="flex z-10 justify-center items-center w-6 h-6 bg-blue-200 rounded-full ring-0 ring-white dark:bg-blue-900 sm:ring-8 dark:ring-gray-900 shrink-0"
 								>
@@ -60,15 +60,18 @@
 					</TimelineItem>
 				{/each}
 			</Timeline>
-			<P class="mt-16 text-base font-normal text-gray-500 dark:text-gray-400 px-4 lg:w-1/2 mx-auto">
+			<P class="mt-16 text-base font-normal text-gray-500 dark:text-gray-400 px-4 md:w-1/2 mx-auto">
 				The three digital leaders -
 				<A href="https://apple.com" target="_blank">Apple</A>,
 				<A href="https://google.com" target="_blank">Google</A>,
 				<A href="https://microsoft.com" target="_blank">Microsoft</A> - have all announced their full
 				support for passkeys in their operating systems, devices and browsers, enforcing passkeys as
 				new login standard. Passkeys are based on FIDO2 and WebAuthn, a capability of operating systems
-				that enables devices to authenticate against a website or app. ​</P
-			>
+				that enables devices to authenticate against a website or app. ​<A
+					href="https://www.corbado.com/passkeys/adoption"
+					target="_blank">See more companies adopting passkeys.</A
+				>
+			</P>
 		</div>
 	</div>
 </section>

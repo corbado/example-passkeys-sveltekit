@@ -1,29 +1,21 @@
 <script lang="ts">
 	import InfoCard from '$lib/components/InfoCard.svelte';
-	import { Button, Heading, P } from 'flowbite-svelte';
+	import { Heading, P } from 'flowbite-svelte';
 </script>
 
 <section class="bg-secondary">
 	<div
-		class="flex flex-col justify-between gap-2 py-8 px-4 mx-auto max-w-screen-xl lg:py-32 lg:px-12 lg:flex-row"
+		class="flex flex-col justify-between gap-2 py-8 px-4 mx-auto max-w-screen-xl md:py-8 md:px-12 md:flex-row"
 	>
-		<div class="w-full text-center lg:text-start">
-			<Heading tag="h6" class="text-blue-500 mb-4">WHY PASSKEYS?</Heading>
+		<div class="w-full text-center self-center md:text-start">
+			<Heading tag="h6" class="text-info mb-4">WHY PASSKEYS?</Heading>
 			<Heading tag="h2" class="mb-8">Improve conversion while boosting security​</Heading>
 			<P class="mb-8">
 				Stand out as a customer- & privacy-driven company. Transition your users from passwords to
 				passkeys.
 			</P>
-			<Button
-				href="https://app.corbado.com/signin#register"
-				pill
-				target="_blank"
-				class="bg-primary text-white"
-			>
-				Start for free
-			</Button>
 		</div>
-		<div class="flex flex-col lg:flex-row gap-y-4 text-center items-center justify-evenly w-full">
+		<div class="flex flex-col md:flex-row gap-y-4 text-center items-center justify-evenly w-full">
 			<div>
 				<InfoCard
 					title="Improve CX"

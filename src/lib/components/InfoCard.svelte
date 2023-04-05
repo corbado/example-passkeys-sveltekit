@@ -15,7 +15,7 @@
 	>
 		<slot name="icon" />
 	</svg>
-	<Heading tag="h6" class="text-blue-500 mb-4">{title}</Heading>
+	<Heading tag="h6" class="text-info mb-4">{title}</Heading>
 	<P class="text-center">{reason}</P>
 	<Heading tag="h4" class="my-2">{stat}</Heading>
 	<P class="text-center">{statReason}</P>
