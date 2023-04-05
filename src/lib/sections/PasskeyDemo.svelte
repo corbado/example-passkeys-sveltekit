@@ -64,7 +64,7 @@
 	corbado-auth {
 		--primary-color: #1953ff;
 		--primary-color-rgb: 25, 83, 255;
-		--primary-background-color: #1953ff;
+		--primary-background-color: transparent;
 		--primary-hover-color: #1145df;
 
 		--secondary-font-color: #59acff;
