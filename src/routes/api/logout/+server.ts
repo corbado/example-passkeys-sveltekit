@@ -7,7 +7,5 @@ export const GET = (({ cookies }) => {
 		expires: new Date(0)
 	});
 
-	console.log('deleted', cookies.get('jwt'));
-
 	throw redirect(303, '/');
 }) satisfies RequestHandler;
