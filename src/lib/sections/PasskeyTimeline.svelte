@@ -75,11 +75,14 @@
 			</Timeline>
 			<P class="mt-16 text-center font-normal text-gray-500 dark:text-gray-400 px-4  mx-auto">
 				The three digital leaders -
-				<A href="https://apple.com" target="_blank">Apple</A>,
-				<A href="https://google.com" target="_blank">Google</A>,
-				<A href="https://microsoft.com" target="_blank">Microsoft</A> - fully support passkeys in their
-				operating systems, devices and browsers, enforcing passkeys as new login standard. Passkeys are
-				based on <A href="https://fidoalliance.org/fido2/" target="_blank">FIDO2</A>
+				<A class="hover:no-underline" href="https://apple.com" target="_blank">Apple</A>,
+				<A class="hover:no-underline" href="https://google.com" target="_blank">Google</A>,
+				<A class="hover:no-underline" href="https://microsoft.com" target="_blank">Microsoft</A> - fully
+				support passkeys in their operating systems, devices and browsers, enforcing passkeys as new
+				login standard. Passkeys are based on <A
+					href="https://fidoalliance.org/fido2/"
+					target="_blank">FIDO2</A
+				>
 				and WebAuthn, a capability that enables devices to authenticate in a websites or apps.
 				<A href="https://www.corbado.com/passkeys/adoption" target="_blank"
 					>See more companies adopting passkeys.</A
