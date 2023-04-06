@@ -7,7 +7,7 @@
 
 <section class="bg-white">
 	<div
-		class="flex flex-col justify-between gap-2 py-8 px-4 mx-auto max-w-screen-xl md:py-32 md:px-12 md:flex-row"
+		class="flex flex-col justify-between items-center gap-2 py-8 px-4 mx-auto max-w-screen-xl md:py-32 md:px-12 md:flex-row"
 	>
 		<div class="w-full text-center md:text-start">
 			<Heading tag="h6" class="text-info mb-4">CORBADO OFFERS PASSKEYS-AS-A-SERVICE</Heading>

@@ -1,4 +1,5 @@
 <script lang="ts">
+	import Footer from '$lib/sections/Footer.svelte';
 	import PasskeyDemo from '$lib/sections/PasskeyDemo.svelte';
 	import PasskeyExplainer from '$lib/sections/PasskeyExplainer.svelte';
 	import PasskeySaas from '$lib/sections/PasskeySaas.svelte';
@@ -25,3 +26,5 @@
 <PasskeyStats />
 
 <PasskeySaas />
+
+<Footer />
