@@ -1,5 +1,6 @@
 <script lang="ts">
 	import devices from '$lib/assets/devices.svg';
+	import europe from '$lib/assets/europe.png';
 	import CheckItem from '$lib/components/CheckItem.svelte';
 	import { Button, Heading, Img, P } from 'flowbite-svelte';
 </script>
@@ -23,10 +24,14 @@
 			>
 				Start for free
 			</Button>
-			<div class="flex flex-col items-center md:flex-row mt-8 gap-4 md:gap-8 mb-4 md:mb-0">
+			<div class="flex flex-col items-center md:flex-row gap-4 mt-8 mb-4 md:mb-0">
 				<CheckItem title="Keep all user data" />
 				<CheckItem title="Integration in <1h" />
-				<CheckItem title="GDPR compliant" />
+				<CheckItem title="GDPR compliant">
+					<svelte:fragment slot="icon">
+						<Img src={europe} class="rounded-full ml-2" size="w-7" />
+					</svelte:fragment>
+				</CheckItem>
 			</div>
 		</div>
 		<div class="w-full">
