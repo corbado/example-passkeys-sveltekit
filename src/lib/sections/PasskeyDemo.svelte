@@ -19,6 +19,10 @@
 			window.removeEventListener('scroll', handleScroll);
 		};
 	});
+
+	function scrollToContinue() {
+		window.scrollBy({ top: window.innerHeight, behavior: 'smooth' });
+	}
 </script>
 
 <svelte:head>
@@ -51,12 +55,13 @@
 				</corbado-auth>
 			</Card>
 		{/if}
-		<div
-			class="scroll-to-continue"
+		<button
+			class="opacity-100 transition-opacity duration-300 absolute bottom-8 left-1/2 transform -translate-x-1/2 bg-white bg-opacity-70 py-2 px-4 rounded-full text-black focus:outline-none"
 			style="opacity: {scrollVisible ? 1 : 0}; transition: opacity 300ms;"
+			on:click={scrollToContinue}
 		>
 			Scroll to continue
-		</div>
+		</button>
 	</div>
 </section>
 
@@ -83,17 +88,5 @@
 		--secondary-font: 'Inter', sans-serif;
 		--border-color: rgba(143, 155, 191, 0.5);
 		--email-provider-btn-color: rgba(143, 155, 191, 0.5);
-	}
-
-	.scroll-to-continue {
-		position: absolute;
-		bottom: 2rem;
-		left: 50%;
-		transform: translateX(-50%);
-		background-color: rgba(255, 255, 255, 0.7);
-		padding: 0.5rem 1rem;
-		border-radius: 1rem;
-		text-align: center;
-		color: #000;
 	}
 </style>
