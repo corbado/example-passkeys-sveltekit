@@ -1,20 +1,27 @@
 <script lang="ts">
-	import { A, Heading, P, Timeline, TimelineItem } from 'flowbite-svelte';
+	import apple from '$lib/assets/apple.svg';
+	import google from '$lib/assets/google.svg';
+	import microsoft from '$lib/assets/microsoft.svg';
+	import { A, Heading, Img, P, Timeline, TimelineItem } from 'flowbite-svelte';
 	const timelineItems = [
 		{
 			title: 'Microsoft',
 			date: 'May 2022',
-			text: 'announces passkeys on world password day'
+			text: 'announces passkeys on world password day',
+			icon: microsoft
 		},
 		{
 			title: 'Google',
 			date: 'May 2022',
-			text: 'announces passkeys at Google I/O'
+			text: 'announces passkeys at Google I/O',
+			icon: google,
+			size: 'w-24'
 		},
 		{
 			title: 'Apple',
 			date: 'June 2022',
-			text: 'announces passkeys at WWDC22'
+			text: 'announces passkeys at WWDC22',
+			icon: apple
 		},
 		{
 			title: 'You?',
@@ -35,6 +42,11 @@
 				{#each timelineItems as timelineItem}
 					<TimelineItem title={timelineItem.title} date={timelineItem.date}>
 						<svelte:fragment slot="icon">
+							<div class="flex justify-center h-12">
+								{#if timelineItem.icon}
+									<Img src={timelineItem.icon} size={timelineItem.size} alt={timelineItem.title} />
+								{/if}
+							</div>
 							<div class="flex items-center invisible md:visible">
 								<div
 									class="flex z-10 justify-center items-center w-6 h-6 bg-blue-200 rounded-full ring-0 ring-white dark:bg-blue-900 sm:ring-8 dark:ring-gray-900 shrink-0"
@@ -65,16 +77,12 @@
 				The three digital leaders -
 				<A href="https://apple.com" target="_blank">Apple</A>,
 				<A href="https://google.com" target="_blank">Google</A>,
-				<A href="https://microsoft.com" target="_blank">Microsoft</A> - fully
-				support passkeys in their operating systems, devices and browsers, enforcing passkeys as
-				new login standard. Passkeys are based on <A
-				href="https://fidoalliance.org/fido2/"
-				target="_blank">FIDO2</A>
-				and WebAuthn, a capability
-				that enables devices to authenticate in a websites or apps.
-				<A
-					href="https://www.corbado.com/passkeys/adoption"
-					target="_blank">See more companies adopting passkeys.</A
+				<A href="https://microsoft.com" target="_blank">Microsoft</A> - fully support passkeys in their
+				operating systems, devices and browsers, enforcing passkeys as new login standard. Passkeys are
+				based on <A href="https://fidoalliance.org/fido2/" target="_blank">FIDO2</A>
+				and WebAuthn, a capability that enables devices to authenticate in a websites or apps.
+				<A href="https://www.corbado.com/passkeys/adoption" target="_blank"
+					>See more companies adopting passkeys.</A
 				>
 			</P>
 		</div>
