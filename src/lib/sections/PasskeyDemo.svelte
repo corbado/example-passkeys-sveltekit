@@ -29,7 +29,7 @@
 	<div
 		class="mx-auto max-w-screen-xl flex flex-col text-center items-center justify-center w-full h-full"
 	>
-		<Heading tag="h1" class="mb-8 md:mb-32">Passkey authentication demo</Heading>
+		<Heading tag="h1" class="mb-8 md:mb-32">Passkey demo</Heading>
 		{#if data && data.jwt}
 			<Card class="w-full">
 				<Heading tag="h4">That’s it. You’re logged in.​</Heading>

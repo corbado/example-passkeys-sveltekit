@@ -8,8 +8,8 @@
 		class="flex flex-col justify-between gap-2 py-8 px-4 mx-auto max-w-screen-xl md:py-8 md:px-12 md:flex-row"
 	>
 		<div class="w-full text-center self-center md:text-start">
-			<Heading tag="h6" class="text-info mb-4">WHY PASSKEYS?</Heading>
-			<Heading tag="h2" class="mb-8">Improve conversion while boosting security​</Heading>
+			<Heading tag="h6" class="text-info mb-4">IMPROVE UX WHILE BOOSTING SECURITY</Heading>
+			<Heading tag="h2" class="mb-8">Why passkeys?</Heading>
 			<P class="mb-8">
 				Stand out as a customer- & privacy-driven company. Transition your users from passwords to
 				passkeys.
@@ -18,8 +18,8 @@
 		<div class="flex flex-col md:flex-row gap-y-4 text-center items-center justify-evenly w-full">
 			<div>
 				<InfoCard
-					title="Improve CX"
-					reason="because of"
+					title="Improve UX"
+					reason="because"
 					stat="75%"
 					statReason="frustrated due to passwords"
 				>
@@ -51,7 +51,7 @@
 					title="Enhance IT security"
 					reason="with"
 					stat="100%"
-					statReason="fewer phising attacks"
+					statReason="phishing-resistance"
 				>
 					<svelte:fragment slot="icon">
 						<path
