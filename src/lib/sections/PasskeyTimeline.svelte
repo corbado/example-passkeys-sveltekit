@@ -7,20 +7,23 @@
 		{
 			title: 'Microsoft',
 			date: 'May 2022',
-			text: 'announces passkeys on world password day',
+			text: 'on world password day',
+			link: 'https://techcommunity.microsoft.com/t5/microsoft-entra-azure-ad-blog/expansion-of-fido-standard-and-new-updates-for-microsoft/ba-p/3290633',
 			icon: microsoft
 		},
 		{
 			title: 'Google',
 			date: 'May 2022',
-			text: 'announces passkeys at Google I/O',
+			text: 'at Google I/O',
 			icon: google,
+			link: 'https://io.google/2022/program/e3bb37a4-2723-4d72-a5b3-1a23abb94ac0/',
 			size: 'w-24'
 		},
 		{
 			title: 'Apple',
 			date: 'June 2022',
-			text: 'announces passkeys at WWDC22',
+			text: 'at WWDC22',
+			link: 'https://developer.apple.com/passkeys/',
 			icon: apple
 		},
 		{
@@ -68,21 +71,23 @@
 							</div>
 						</svelte:fragment>
 						<p class="text-base font-normal text-gray-500 dark:text-gray-400 px-4">
-							{timelineItem.text}
+							{#if timelineItem.link}
+								<A href={timelineItem.link} target="_blank">announces passkeys</A>
+								{timelineItem.text}
+							{:else}
+								{timelineItem.text}
+							{/if}
 						</p>
 					</TimelineItem>
 				{/each}
 			</Timeline>
 			<P class="mt-16 text-center font-normal text-gray-500 dark:text-gray-400 px-4  mx-auto">
 				The three digital leaders -
-				<A class="hover:no-underline" href="https://apple.com" target="_blank">Apple</A>,
-				<A class="hover:no-underline" href="https://google.com" target="_blank">Google</A>,
-				<A class="hover:no-underline" href="https://microsoft.com" target="_blank">Microsoft</A> - fully
-				support passkeys in their operating systems, devices and browsers, enforcing passkeys as new
-				login standard. Passkeys are based on <A
-					href="https://fidoalliance.org/fido2/"
-					target="_blank">FIDO2</A
-				>
+				<A href="https://apple.com" target="_blank">Apple</A>,
+				<A href="https://google.com" target="_blank">Google</A>,
+				<A href="https://microsoft.com" target="_blank">Microsoft</A> - fully support passkeys in their
+				operating systems, devices and browsers, enforcing passkeys as new login standard. Passkeys are
+				based on <A href="https://fidoalliance.org/fido2/" target="_blank">FIDO2</A>
 				and WebAuthn, a capability that enables devices to authenticate in a websites or apps.
 				<A href="https://www.corbado.com/passkeys/adoption" target="_blank"
 					>See more companies adopting passkeys.</A
