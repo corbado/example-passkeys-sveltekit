@@ -13,7 +13,8 @@ const config = {
 			colors: {
 				primary: '#1953ff',
 				secondary: '#EEF7FF',
-				info: '#3F83F8'
+				info: '#3F83F8',
+				hover: '#1145df'
 			}
 		}
 	},

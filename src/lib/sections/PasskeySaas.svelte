@@ -12,13 +12,14 @@
 			<Heading tag="h6" class="text-info mb-4">CORBADO OFFERS PASSKEYS-AS-A-SERVICE</Heading>
 			<Heading tag="h2" class="mb-8">How to integrate passkeys?</Heading>
 			<P class="mb-8">
-				Corbado helps you transition your users to passkeys risk-free within &lt1 hour. Provide the best passwordless login experience now.
+				Corbado helps you transition your users to passkeys risk-free within &lt1 hour. Provide the
+				best passwordless login experience now.
 			</P>
 			<Button
 				href="https://app.corbado.com/signin#register"
 				pill
 				target="_blank"
-				class="bg-primary text-white"
+				class="bg-primary text-white hover:bg-hover"
 			>
 				Start for free
 			</Button>
