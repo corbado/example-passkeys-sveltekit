@@ -33,14 +33,14 @@
 	<div
 		class="mx-auto max-w-screen-xl flex flex-col text-center items-center justify-center w-full h-full"
 	>
-		<Heading tag="h1" class="mb-8 md:mb-32">Passkey demo</Heading>
+		<Heading tag="h1" class="mb-8 md:mb-16">Passkey demo</Heading>
 		{#if data && data.jwt}
 			<Card class="w-full">
 				<Heading tag="h4">That’s it. You’re logged in.​</Heading>
 				<Button href="/api/logout" pill class="bg-primary text-white mt-32 mb-8">Log out</Button>
 			</Card>
 		{:else}
-			<Card class="w-full">
+			<Card class="w-11/12 md:w-full mb-16">
 				<corbado-auth
 					style="border: none"
 					project_id={PUBLIC_CORBADO_PROJECT_ID}
@@ -56,7 +56,7 @@
 			</Card>
 		{/if}
 		<button
-			class="opacity-100 transition-opacity duration-300 absolute bottom-8 left-1/2 transform -translate-x-1/2 bg-white bg-opacity-70 py-2 px-4 rounded-full text-black focus:outline-none"
+			class="invisible md:visible opacity-100 transition-opacity duration-300 absolute bottom-8 left-1/2 transform -translate-x-1/2 bg-white bg-opacity-70 py-2 px-4 rounded-full text-black focus:outline-none"
 			style="opacity: {scrollVisible ? 1 : 0}; transition: opacity 300ms;"
 			on:click={scrollToContinue}
 		>
