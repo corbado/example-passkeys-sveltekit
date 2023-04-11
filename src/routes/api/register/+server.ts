@@ -9,6 +9,8 @@ export const GET = (async ({ url, request, getClientAddress, cookies }) => {
 		remoteAddress: getClientAddress()
 	};
 
+	console.log(corbado.remoteAddress);
+
 	const response = await fetch('https://api.corbado.com/v1/sessions/verify', {
 		method: 'POST',
 		headers: {
@@ -19,7 +21,7 @@ export const GET = (async ({ url, request, getClientAddress, cookies }) => {
 			token: corbado.sessionToken,
 			clientInfo: {
 				userAgent: corbado.userAgent,
-				remoteAddress: '127.0.0.1'
+				remoteAddress: corbado.remoteAddress
 			}
 		})
 	});
