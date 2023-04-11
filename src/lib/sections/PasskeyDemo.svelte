@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { PUBLIC_CORBADO_PROJECT_ID } from '$env/static/public';
 	import { Button, Card, Heading } from 'flowbite-svelte';
 	import { onMount } from 'svelte';
 	import type { PageData } from '../../routes/$types';
@@ -34,13 +35,13 @@
 	>
 		<Heading tag="h1" class="mb-8 md:mb-16">Passkey demo</Heading>
 		<Card class="w-11/12 md:w-full mb-16">
-			<!-- {#if data && data.jwt} -->
-			<Heading tag="h4">That’s it.</Heading>
-			<Heading tag="h4">You’re logged in.​</Heading>
-			<Button href="/api/logout" pill class="bg-primary text-white mt-8 ">Log out</Button>
-			<!-- {:else}
+			{#if data && data.jwt}
+				<Heading tag="h4">That’s it.</Heading>
+				<Heading tag="h4">You’re logged in.​</Heading>
+				<Button href="/api/logout" pill class="bg-primary text-white mt-8 ">Log out</Button>
+			{:else}
 				<corbado-auth
-					style="border: none"
+					style="border: none; padding: 0px"
 					project_id={PUBLIC_CORBADO_PROJECT_ID}
 					conditional="yes"
 					login_title="Try passkey login"
@@ -51,7 +52,7 @@
 				>
 					<input name="username" id="corbado-username" value="" required autocomplete="webauthn" />
 				</corbado-auth>
-			{/if} -->
+			{/if}
 		</Card>
 		<button
 			class="invisible md:visible opacity-100 transition-opacity duration-300 absolute bottom-8 left-1/2 transform -translate-x-1/2 bg-white bg-opacity-70 py-2 px-4 rounded-full text-black focus:outline-none"
