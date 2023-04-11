@@ -3,7 +3,6 @@
 	"version": "0.0.1",
 	"private": true,
 	"scripts": {
-		"preinstall": "npx only-allow pnpm",
 		"dev": "vite dev",
 		"build": "vite build",
 		"cloudflare-build": "npm install -g pnpm && pnpm i && pnpm run build",
