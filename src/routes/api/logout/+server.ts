@@ -7,5 +7,5 @@ export const GET = (({ cookies }) => {
 		expires: new Date(0)
 	});
 
-	throw redirect(303, '/');
+	throw redirect(303, '/#login');
 }) satisfies RequestHandler;

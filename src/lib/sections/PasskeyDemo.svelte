@@ -33,18 +33,19 @@
 	<div
 		class="mx-auto max-w-screen-xl flex flex-col text-center items-center justify-center w-full h-full"
 	>
-		<Heading tag="h1" class="mb-8 md:mb-32">Passkey demo</Heading>
-		{#if data && data.jwt}
-			<Card class="w-full">
-				<Heading tag="h4">That’s it. You’re logged in.​</Heading>
-				<Button href="/api/logout" pill class="bg-primary text-white mt-32 mb-8">Log out</Button>
-			</Card>
-		{:else}
-			<Card class="w-full">
+		<Heading tag="h1" class="mb-8 md:mb-16">Passkey demo</Heading>
+		<Card class="w-11/12 md:w-full mb-16">
+			{#if data && data.jwt}
+				<Heading tag="h4">That’s it.</Heading>
+				<Heading tag="h4">You’re logged in.​</Heading>
+				<Button href="/api/logout" pill class="bg-primary text-white mt-8 ">Log out</Button>
+			{:else}
 				<corbado-auth
-					style="border: none"
+					style="border: none; padding: 0px"
 					project_id={PUBLIC_CORBADO_PROJECT_ID}
 					conditional="yes"
+					auto_detect_language="no"
+					fallback_language="en"
 					login_title="Try passkey login"
 					login_btn="Passkey login"
 					register_title="Try passkey signup"
@@ -53,10 +54,10 @@
 				>
 					<input name="username" id="corbado-username" value="" required autocomplete="webauthn" />
 				</corbado-auth>
-			</Card>
-		{/if}
+			{/if}
+		</Card>
 		<button
-			class="opacity-100 transition-opacity duration-300 absolute bottom-8 left-1/2 transform -translate-x-1/2 bg-white bg-opacity-70 py-2 px-4 rounded-full text-black focus:outline-none"
+			class="invisible md:visible opacity-100 transition-opacity duration-300 absolute bottom-8 left-1/2 transform -translate-x-1/2 bg-white bg-opacity-70 py-2 px-4 rounded-full text-black focus:outline-none"
 			style="opacity: {scrollVisible ? 1 : 0}; transition: opacity 300ms;"
 			on:click={scrollToContinue}
 		>
