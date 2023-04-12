@@ -44,6 +44,8 @@
 					style="border: none; padding: 0px"
 					project_id={PUBLIC_CORBADO_PROJECT_ID}
 					conditional="yes"
+					auto_detect_language="no"
+					fallback_language="en"
 					login_title="Try passkey login"
 					login_btn="Passkey login"
 					register_title="Try passkey signup"
