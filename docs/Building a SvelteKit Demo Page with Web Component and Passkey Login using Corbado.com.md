@@ -180,17 +180,14 @@ For the purpose of this demo, we'll focus on integrating Corbado, so I am going 
 Visit the [Corbado Developer Panel](https://app.corbado.com/signin#register) to sign up and create your account (you'll see passkeys sign up in action!).
 Once you are in the developer panel, go to Settings > Credentials:
 
-![[CleanShot 2023-04-11 at 12.24.09@2x.png]]
+- Press on `Add New`.
 
 Here, add a new authorized origin so that your local Svelte app can send requests to the Corbado API using the web component:
 
-![[CleanShot 2023-04-11 at 12.25.04@2x.png]]
+- Enter a name description, e.g. "Passkey demo"
+- Enter the origin URL, in our case the `http://localhost:5137` local url
 
-![[CleanShot 2023-04-11 at 12.26.10@2x.png]]
-
-Once you are done, you will need to get your project ID and create an API secret to authenticate with the Corbado backend:
-
-![[CleanShot 2023-04-11 at 12.26.55@2x.png]]
+Once you are done, you will need to get your project ID and create an API secret to authenticate with the Corbado backend. Go to the `API secrets` tab.
 
 Copy the username by clicking on it, and press on add new to get a new API secret you can copy. We'll add these to an `.env` file in the root of our SvelteKit project:
 
@@ -236,15 +233,13 @@ import { PUBLIC_CORBADO_PROJECT_ID } from '$env/static/public';
 
 ### 5.3 Setting up the redirect logic
 
-The Corbado web component works by _redirecting_ you to a page you specify once the user signs up or logs in. This redirect URL can be a server-side route, or a client route. In our case, it will be a SvelteKit server endpoint. To set up our Redirect URL, let's go into the [Corbado Developer Panel](https://app.Corbado.com) and navigate to the URL tab in Settings > General:
+The Corbado web component works by _redirecting_ you to a page you specify once the user signs up or logs in. This redirect URL can be a server-side route, or a client route. In our case, it will be a SvelteKit server endpoint. To set up our Redirect URL, let's go into the [Corbado Developer Panel](https://app.Corbado.com) and navigate to the URL tab in Settings > General and enter the following:
 
-![[CleanShot 2023-04-11 at 12.54.37@2x.png]]
+`Redirect URL`: Enter the URL your app should redirect to once signing up with the web component. In our case, it is the SvelteKit API route `http://localhost:5137/api/register` .
 
-![[CleanShot 2023-04-11 at 12.54.42@2x.png]]
+`Application URL`: Enter the URL your application runs on, in our case it is `localhost:5137` locally.
 
-Here, we'll enter the API route of our SvelteKit that we want to receive the redirect on, and add our localhost address as our application URL. The Application URL is used for, among others, to correctly direct users to the web component again, when they have clicked on an email magic link.
-
-![[CleanShot 2023-04-11 at 13.04.18@2x.png]]
+The Application URL is used for, among others, to correctly direct users to the web component again, when they have clicked on an email magic link.
 
 Let's now add our server route in SvelteKit. Under the `routes/` folder, we will create the folders `api/register` and create a file `api/register/+server.ts` in it. This will contain our API route:
 
