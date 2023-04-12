@@ -30,6 +30,11 @@ export const GET = (async ({ url, request, getClientAddress, cookies }) => {
 		throw error(401, 'Invalid session token');
 	}
 
+	cookies.set('signedIn', 'true', {
+		path: '/',
+		httpOnly: true
+	});
+
 	cookies.set('jwt', crypto.randomUUID(), {
 		httpOnly: true,
 		path: '/',
