@@ -1,6 +1,6 @@
 # Complete passkeys integration example for Corbado API with SvelteKit
 
-This is a sample implementation of the Corbado webcomponent being integrated into a web page built with SvelteKit to showcase passkey authentication.
+This is a sample implementation of the Corbado webcomponent being integrated into a web page built with SvelteKit to showcase passkey authentication. You can see the demo live on <https://passkeys.eu> or <https://passkeys.fr>.
 
 ## File structure
 
