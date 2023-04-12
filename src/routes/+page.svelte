@@ -13,7 +13,7 @@
 <svelte:head>
 	<link rel="preconnect" href="https://fonts.bunny.net" />
 	<link href="https://fonts.bunny.net/css?family=inter:500|space-grotesk:500" rel="stylesheet" />
-	<title>Corbado Passkey demo</title>
+	<title>Passkeys demo</title>
 	<meta name="description" content="Corbado Passkey passwordless authentication demo" />
 </svelte:head>
 

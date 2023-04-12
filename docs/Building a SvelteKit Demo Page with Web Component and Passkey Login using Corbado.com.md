@@ -1,8 +1,24 @@
+# Building a SvelteKit Demo Page with Web Component and Passkey Login using Corbado.com
+
+- [Building a SvelteKit Demo Page with Web Component and Passkey Login using Corbado.com](#building-a-sveltekit-demo-page-with-web-component-and-passkey-login-using-corbadocom)
+  - [1. Introduction](#1-introduction)
+  - [2. Setting up the SvelteKit project](#2-setting-up-the-sveltekit-project)
+  - [3. Setting up fonts and global styles using Tailwind](#3-setting-up-fonts-and-global-styles-using-tailwind)
+  - [4. Repository structure](#4-repository-structure)
+  - [5. Setting up the Corbado web component for passkey authentication](#5-setting-up-the-corbado-web-component-for-passkey-authentication)
+    - [5.1 Setting up your Corbado account and project](#51-setting-up-your-corbado-account-and-project)
+    - [5.2 Including the web component in our frontend](#52-including-the-web-component-in-our-frontend)
+    - [5.3 Setting up the redirect logic](#53-setting-up-the-redirect-logic)
+    - [5.4 Using cookies to manage authentication state](#54-using-cookies-to-manage-authentication-state)
+  - [6. Conclusion](#6-conclusion)
+
+## 1. Introduction
+
 In this blog post, we'll be walking through the process of building a demo page for [passkeys.eu](https://passkeys.eu/) using SvelteKit. We'll cover how to create a reusable web component and implement passkey login functionality for a seamless user experience. This tutorial assumes basic familiarity with SvelteKit, HTML, CSS and JavaScript. Let's dive in!
 
-# Setting up the SvelteKit project
+## 2. Setting up the SvelteKit project
 
-We'll follow along by cloning our [demo repository](https://github.com/corbado/passkeys-demo) with the finished code, but in case you are interested in how you'd set up the skeleton of the project, check out the next 2 sections. Otherwise, you can skip them and continue from [repository structure](#repository-structure).
+We'll follow along by cloning our [demo repository](https://github.com/Corbado/passkeys-demo) with the finished code, but in case you are interested in how you'd set up the skeleton of the project, check out the next 2 sections. Otherwise, you can skip them and continue from [repository structure](#repository-structure).
 
 We will be using [Flowbite](https://flowbite-svelte.com/pages/getting-started), which is a component library based on [TailwindCSS](https://tailwindcss.com) to quickly build a responsive and aesthetic UI.
 Let's start out by installing SvelteKit. We are going to use [pnpm](https://pnpm.io) instead of `npm`, as `pnpm` is faster by using symlinks to reuse existing dependencies. To install `pnpm`, run:
@@ -52,20 +68,20 @@ const config = {
 module.exports = config;
 ```
 
-# Setting up fonts and global styles using Tailwind
+## 3. Setting up fonts and global styles using Tailwind
 
-To set up some standard fonts and styles that should be global for our application, we can use Tailwind theming. First, we'll create a `<svelte:head>` section in our root `+page.svelte`. This behaves like a standard html `<head>` you'd find in the `index.html` file, it contains metadata and allows you to include third party scripts. We are going to use it to include some fonts from [Bunny Fonts](https://fonts.bunny.net/) and add some metadata for SEO. Add this to your `+page.svelte`:
+To set up some standard fonts and styles that should be global for our application, we can use Tailwind theming. First, we'll create a `<svelte:head>` section in our root `+page.svelte`. This behaves like a standard HTML `<head>` you'd find in the `index.html` file, it contains metadata and allows you to include third party scripts. We are going to use it to include some fonts from [Bunny Fonts](https://fonts.bunny.net/) and add some metadata for SEO. Add this to your `+page.svelte`:
 
 ```html
 <svelte:head>
 	<link rel="preconnect" href="https://fonts.bunny.net" />
 	<link href="https://fonts.bunny.net/css?family=inter:500|space-grotesk:500" rel="stylesheet" />
-	<title>Corbado Passkey demo</title>
+	<title>Passkeys demo</title>
 	<meta name="description" content="Corbado Passkey passwordless authentication demo" />
 </svelte:head>
 ```
 
-# Repository structure
+## 4. Repository structure
 
 Let's first discuss the structure of our `src` folder:
 
@@ -74,7 +90,7 @@ Let's first discuss the structure of our `src` folder:
 │  ├── assets
 │  │  ├── apple.svg
 │  │  ├── auth-sample.svg
-│  │  ├── corbado.png
+│  │  ├── Corbado.png
 │  │  ├── devices.svg
 │  │  ├── europe.png
 │  │  ├── github.png
@@ -109,11 +125,12 @@ Let's first discuss the structure of our `src` folder:
 ```
 
 - `lib` contains auxiliary files, such as:
+
   - image `assets`
   - custom `components` we made
   - `sections` that we use on our demo page
 
-* `routes` contains all the routes of our app, such as
+- `routes` contains all the routes of our app, such as
   - `api` routes, these are equivalent to API endpoints you would have in a classic server / backend. The path of the endpoints correspond to their folder path.
   - The root path `/` svelte files:
     - `+layout.svelte` defines the overall layout and applies our global `.postcss`
@@ -122,7 +139,7 @@ Let's first discuss the structure of our `src` folder:
 
 We have a root `.html` and `.css` file, which we can ignore for the purpose of our tutorial. And a `static` folder for assets like favicons.
 
-# Setting up the Corbado web component for passkey authentication
+## 5. Setting up the Corbado web component for passkey authentication
 
 Our demo page contains various sections as defined in our `+page.svelte` file:
 
@@ -159,12 +176,12 @@ Our demo page contains various sections as defined in our `+page.svelte` file:
 <footer />
 ```
 
-For the purpose of this demo, we'll focus on integrating corbado, so I am going to omit on how I styled and built those pages. If you're interested, checkout the `src/lib/sections` and `src/lib/components` folder in the project repository to see how they're styled.
+For the purpose of this demo, we'll focus on integrating Corbado, so I am going to omit on how I styled and built those pages. If you're interested, checkout the `src/lib/sections` and `src/lib/components` folder in the project repository to see how they're styled.
 
-## Setting up your Corbado account and project
+### 5.1 Setting up your Corbado account and project
 
-Visit the [Corbado Developer Panel](https://app.corbado.com) to sign up and create your account (you'll see passkeys sign up in action!).
-Once you are in the Developerpanel, go to Settings > Credentials:
+Visit the [Corbado Developer Panel](https://app.corbado.com/signin#register) to sign up and create your account (you'll see passkeys sign up in action!).
+Once you are in the developer panel, go to Settings > Credentials:
 
 ![[CleanShot 2023-04-11 at 12.24.09@2x.png]]
 
@@ -187,20 +204,20 @@ PUBLIC_CORBADO_PROJECT_ID=***
 
 SvelteKit allows us to easily access these using the $env namespace to import them. Env variables with `PUBLIC_` prefix are accessible in both client and server routes, while ones without default to being secret and are only accessible in SvelteKit server routes.
 
-## Including the web component in our frontend
+### 5.2 Including the web component in our frontend
 
-The first section in our root `+page.svelte` is `PasskeysDemo`. This section contains our web component demo. To import the corbado web component into our app, all we need to do is add a `svelte:head` to load the script in `src/lib/sections/PasskeyDemo.svelte`:
+The first section in our root `+page.svelte` is `PasskeysDemo`. This section contains our web component demo. To import the Corbado web component into our app, all we need to do is add a `svelte:head` to load the script in `src/lib/sections/PasskeyDemo.svelte`:
 
 ```html
 <svelte:head>
-	<script defer src="https://auth.corbado.com/auth.js"></script>
+	<script defer src="https://auth.Corbado.com/auth.js"></script>
 </svelte:head>
 ```
 
-Then we can include it like so:
+Then we can include it:
 
 ```html
-<corbado-auth
+<Corbado-auth
 	style="border: none"
 	project_id="{PUBLIC_CORBADO_PROJECT_ID}"
 	conditional="yes"
@@ -210,19 +227,19 @@ Then we can include it like so:
 	register_btn="Passkey signup"
 	page="register"
 >
-	<input name="username" id="corbado-username" value="" required autocomplete="webauthn" />
-</corbado-auth>
+	<input name="username" id="Corbado-username" value="" required autocomplete="webauthn" />
+</Corbado-auth>
 ```
 
-The component has various utility attributes to customize it, like `login_title`, or `login_btn`. What's important for you to get it to work is the `project_id` attribute, where we will pass in our `PUBLIC_CORBADO_PROJECT_ID` from the environment. If you use an Editor like VSCode with the Svelte extension, it will automatically add this import to your `.svelte` `<script>` tag:
+The web component has various utility attributes to customize it, like `login_title`, or `login_btn`. What's important for you to get it to work is the `project_id` attribute, where we will pass in our `PUBLIC_CORBADO_PROJECT_ID` from the environment. If you use an Editor like VSCode with the Svelte extension, it will automatically add this import to your `.svelte` `<script>` tag:
 
 ```js
 import { PUBLIC_CORBADO_PROJECT_ID } from '$env/static/public';
 ```
 
-## Setting up the redirect logic
+### 5.3 Setting up the redirect logic
 
-The Corbado web component works by _redirecting_ you to a page you specify once the user signs up or logs in. This redirect URL can be a server-side route, or a client route. In our case, it will be a SvelteKit server endpoint. To set up our Redirect URL, let's go into the [Corbado Developer Panel](https://app.corbado.com) and navigate to the URL tab in Settings > General:
+The Corbado web component works by _redirecting_ you to a page you specify once the user signs up or logs in. This redirect URL can be a server-side route, or a client route. In our case, it will be a SvelteKit server endpoint. To set up our Redirect URL, let's go into the [Corbado Developer Panel](https://app.Corbado.com) and navigate to the URL tab in Settings > General:
 
 ![[CleanShot 2023-04-11 at 12.54.37@2x.png]]
 
@@ -240,23 +257,23 @@ import { PUBLIC_CORBADO_PROJECT_ID } from '$env/static/public';
 import { error, redirect, type RequestHandler } from '@sveltejs/kit';
 
 export const GET = (async ({ url, request, getClientAddress, cookies }) => {
-	const corbado = {
+	const Corbado = {
 		sessionToken: url.searchParams.get('sessionToken') || '',
 		userAgent: request.headers.get('user-agent'),
 		remoteAddress: getClientAddress()
 	};
 
-	const response = await fetch('https://api.corbado.com/v1/sessions/verify', {
+	const response = await fetch('https://api.Corbado.com/v1/sessions/verify', {
 		method: 'POST',
 		headers: {
 			'Content-Type': 'application/json',
 			Authorization: `Basic ${btoa(`${PUBLIC_CORBADO_PROJECT_ID}:${CORBADO_API_SECRET}`)}`
 		},
 		body: JSON.stringify({
-			token: corbado.sessionToken,
+			token: Corbado.sessionToken,
 			clientInfo: {
-				userAgent: corbado.userAgent,
-				remoteAddress: corbado.remoteAddress
+				userAgent: Corbado.userAgent,
+				remoteAddress: Corbado.remoteAddress
 			}
 		})
 	});
@@ -277,13 +294,13 @@ export const GET = (async ({ url, request, getClientAddress, cookies }) => {
 
 Let's digest this one by one. This `GET` route will be automatically called by the Corbado API once a user clicks on register or login. We then need to verify that information with the Corbado API, and can then authenticate our user locally.
 
-In the `corbado` constant, we save all the information that is relevant to verification, such as `sessionToken`, and `clientinfo` such as the `userAgent` and the `remoteAddress`. SvelteKit provides useful helpers we can pass to the route to get all this information.
+In the `Corbado` constant, we save all the information that is relevant to verification, such as `sessionToken`, and `clientinfo` such as the `userAgent` and the `remoteAddress`. SvelteKit provides useful helpers we can pass to the route to get all this information.
 
 Once we have that information, we want to call the Corbado API's `sessionVerify` endpoint. We use our project ID and our secret that we saved in our `.env` before to authenticate with Basic authentication, and in the body, we pass the sessionToken, and the `clientinfo` we have gathered.
 
 If our response fails, we will let our endpoint throw an error. If we successfully verified, we can now set a cookie using a new `jwt` token, and redirect our client back to the root. Note that in production, you would probably use the user information returned to you by the response of the `sessionVerify` call to create a user in your database, but for our purpose, we'll just create a cookie locally.
 
-## Using cookies to manage authentication state
+### 5.4 Using cookies to manage authentication state
 
 Now that we can press sign up on our web component and get a cookie back, we need to load that cookie into our client and use it to show sign in status. To do this, we can use SvelteKit's `load` functions. In our `routes` folder root, we can create a `+page.server.ts` next to the existing `+page.server.ts`:
 
@@ -330,7 +347,7 @@ Now we can use that to conditionally render our UI:
 </Card>
 {:else}
 <Card class="w-full">
-	<corbado-auth
+	<Corbado-auth
 		style="border: none"
 		project_id="{PUBLIC_CORBADO_PROJECT_ID}"
 		conditional="yes"
@@ -340,8 +357,8 @@ Now we can use that to conditionally render our UI:
 		register_btn="Passkey signup"
 		page="register"
 	>
-		<input name="username" id="corbado-username" value="" required autocomplete="webauthn" />
-	</corbado-auth>
+		<input name="username" id="Corbado-username" value="" required autocomplete="webauthn" />
+	</Corbado-auth>
 </Card>
 {/if}
 <!--- other code --->
@@ -365,6 +382,6 @@ export const GET = (({ cookies }) => {
 
 This action will get invoked when the button is pressed, and it will delete the jwt token from the browser and redirect back to the page root.
 
-# Conclusion
+## 6. Conclusion
 
 I hope this demo showed how easy it is to quickly add passwordless authentication using passkeys to your SvelteKit app by using Corbado, and utilizing all of SvelteKit's features to make our lives easier in the process.
