@@ -31,13 +31,17 @@ export const GET = (async ({ url, request, getClientAddress, cookies }) => {
 	}
 
 	cookies.set('signedIn', 'true', {
+		httpOnly: true,
 		path: '/',
-		httpOnly: true
+		sameSite: 'lax',
+		secure: true
 	});
 
 	cookies.set('jwt', crypto.randomUUID(), {
 		httpOnly: true,
 		path: '/',
+		sameSite: 'lax',
+		secure: true,
 		maxAge: 60 * 60 * 24 // 1 day
 	});
 
