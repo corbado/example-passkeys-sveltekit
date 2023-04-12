@@ -1,16 +1,13 @@
-# Building a SvelteKit Demo Page with Web Component and Passkey Login using Corbado.com
-
-- [Building a SvelteKit Demo Page with Web Component and Passkey Login using Corbado.com](#building-a-sveltekit-demo-page-with-web-component-and-passkey-login-using-corbadocom)
-  - [1. Introduction](#1-introduction)
-  - [2. Setting up the SvelteKit project](#2-setting-up-the-sveltekit-project)
-  - [3. Setting up fonts and global styles using Tailwind](#3-setting-up-fonts-and-global-styles-using-tailwind)
-  - [4. Repository structure](#4-repository-structure)
-  - [5. Setting up the Corbado web component for passkey authentication](#5-setting-up-the-corbado-web-component-for-passkey-authentication)
-    - [5.1 Setting up your Corbado account and project](#51-setting-up-your-corbado-account-and-project)
-    - [5.2 Including the web component in our frontend](#52-including-the-web-component-in-our-frontend)
-    - [5.3 Setting up the redirect logic](#53-setting-up-the-redirect-logic)
-    - [5.4 Using cookies to manage authentication state](#54-using-cookies-to-manage-authentication-state)
-  - [6. Conclusion](#6-conclusion)
+- [1. Introduction](#1-introduction)
+- [2. Setting up the SvelteKit project](#2-setting-up-the-sveltekit-project)
+- [3. Setting up fonts and global styles using Tailwind](#3-setting-up-fonts-and-global-styles-using-tailwind)
+- [4. Repository structure](#4-repository-structure)
+- [5. Setting up the Corbado web component for passkey authentication](#5-setting-up-the-corbado-web-component-for-passkey-authentication)
+  - [5.1 Setting up your Corbado account and project](#51-setting-up-your-corbado-account-and-project)
+  - [5.2 Including the web component in our frontend](#52-including-the-web-component-in-our-frontend)
+  - [5.3 Setting up the redirect logic](#53-setting-up-the-redirect-logic)
+  - [5.4 Using cookies to manage authentication state](#54-using-cookies-to-manage-authentication-state)
+- [6. Conclusion](#6-conclusion)
 
 ## 1. Introduction
 
@@ -245,7 +242,7 @@ The Corbado web component works by _redirecting_ you to a page you specify once 
 
 ![[CleanShot 2023-04-11 at 12.54.42@2x.png]]
 
-Here, we'll enter the api route of our SvelteKit that we want to receive the redirect on, and add our localhost address as our application URL.
+Here, we'll enter the API route of our SvelteKit that we want to receive the redirect on, and add our localhost address as our application URL. The Application URL is used for, among others, to correctly direct users to the web component again, when they have clicked on an email magic link.
 
 ![[CleanShot 2023-04-11 at 13.04.18@2x.png]]
 
