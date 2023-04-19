@@ -27,6 +27,14 @@
 	/>
 	<title>Passkeys demo</title>
 	<meta name="description" content="Corbado Passkey passwordless authentication demo" />
+	<meta property="og:title" content="Corbado Passkeys demo" />
+	<meta
+		property="og:description"
+		content="Corbado Passkey passwordless authentication demo using passkeys"
+	/>
+	<meta property="og:image" content="share_image.png" />
+	<meta property="og:url" content="https://passkeys.eu" />
+	<meta property="og:type" content="website" />
 </svelte:head>
 
 <PasskeyDemo {data} />
