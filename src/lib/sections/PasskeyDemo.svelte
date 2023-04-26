@@ -50,7 +50,7 @@
 					login_btn="Passkey login"
 					register_title="Try passkey signup"
 					register_btn="Passkey signup"
-					page="register"
+					page={data.signedIn ? 'login' : 'register'}
 				>
 					<input name="username" id="corbado-username" value="" required autocomplete="webauthn" />
 				</corbado-auth>
