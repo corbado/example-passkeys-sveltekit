@@ -7,8 +7,10 @@
 	export let data: PageData;
 
 	let scrollVisible = true;
+	let username = '';
 
 	onMount(() => {
+		username = localStorage.getItem('username') || '';
 		const handleScroll = () => {
 			scrollVisible = window.scrollY < 50;
 		};
@@ -52,7 +54,13 @@
 					register_btn="Passkey signup"
 					page={data.signedIn ? 'login' : 'register'}
 				>
-					<input name="username" id="corbado-username" value="" required autocomplete="webauthn" />
+					<input
+						name="username"
+						id="corbado-username"
+						value={username}
+						required
+						autocomplete="webauthn"
+					/>
 				</corbado-auth>
 			{/if}
 		</Card>
