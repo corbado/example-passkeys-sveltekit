@@ -1,49 +1,40 @@
-import { CORBADO_API_SECRET } from '$env/static/private';
-import { PUBLIC_CORBADO_PROJECT_ID } from '$env/static/public';
+// +server.ts
+import Session from './session';
+import { PUBLIC_CORBADO_AUTHENTICATION_URL } from '$env/static/public';
 import { error, redirect, type RequestHandler } from '@sveltejs/kit';
 
-export const GET = (async ({ url, request, getClientAddress, cookies }) => {
-	const corbado = {
-		sessionToken: url.searchParams.get('sessionToken') || '',
-		userAgent: request.headers.get('user-agent'),
-		remoteAddress: getClientAddress()
-	};
+export const GET = (async ({ request, cookies }) => {
+	// Initialize Session class with appropriate parameters
+	const shortSessionToken = cookies.get('cbo_short_session');
+	const session = new Session(
+		'cbo_short_session',
+		PUBLIC_CORBADO_AUTHENTICATION_URL,
+		PUBLIC_CORBADO_AUTHENTICATION_URL + '/.well-known/jwks',
+		60000
+	);
 
-	console.log(corbado.remoteAddress);
+	try {
+		const user = await session.validateShortSessionValue(shortSessionToken);
+		if (!user.isSignedIn) {
+			throw error(401, 'Invalid session token');
+		}
 
-	const response = await fetch('https://api.corbado.com/v1/sessions/verify', {
-		method: 'POST',
-		headers: {
-			'Content-Type': 'application/json',
-			Authorization: `Basic ${btoa(`${PUBLIC_CORBADO_PROJECT_ID}:${CORBADO_API_SECRET}`)}`
-		},
-		body: JSON.stringify({
-			token: corbado.sessionToken,
-			clientInfo: {
-				userAgent: corbado.userAgent,
-				remoteAddress: corbado.remoteAddress
-			}
-		})
-	});
+		cookies.set('signedIn', 'true', {
+			httpOnly: true,
+			path: '/',
+			sameSite: 'lax',
+			secure: true
+		});
 
-	if (response.status !== 200) {
-		throw error(401, 'Invalid session token');
+		throw redirect(303, '/');
+	} catch (e) {
+		cookies.set('signedIn', 'false', {
+			httpOnly: true,
+			path: '/',
+			sameSite: 'lax',
+			secure: true
+		});
+
+		throw redirect(303, '/#login');
 	}
-
-	cookies.set('signedIn', 'true', {
-		httpOnly: true,
-		path: '/',
-		sameSite: 'lax',
-		secure: true
-	});
-
-	cookies.set('jwt', crypto.randomUUID(), {
-		httpOnly: true,
-		path: '/',
-		sameSite: 'lax',
-		secure: true,
-		maxAge: 60 * 60 * 24 // 1 day
-	});
-
-	throw redirect(303, '/');
 }) satisfies RequestHandler;
