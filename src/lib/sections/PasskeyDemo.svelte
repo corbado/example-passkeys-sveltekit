@@ -31,23 +31,18 @@
         if (data && data.jwt) {
             gtag_report_conversion();
         }
+
+
+        window.addEventListener('scroll', handleScroll);
+
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    });
+
+    function scrollToContinue() {
+        window.scrollBy({top: window.innerHeight, behavior: 'smooth'});
     }
-
-
-</script>
-
-}
-
-window.addEventListener('scroll', handleScroll);
-
-return () => {
-    window.removeEventListener('scroll', handleScroll);
-};
-});
-
-function scrollToContinue() {
-    window.scrollBy({top: window.innerHeight, behavior: 'smooth'});
-}
 </script>
 
 <svelte:head>
