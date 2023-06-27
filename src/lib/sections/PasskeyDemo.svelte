@@ -9,6 +9,19 @@
     let scrollVisible = true;
     let username = '';
 
+    function gtag_report_conversion(url) {
+        var callback = function () {
+            if (typeof (url) != 'undefined') {
+                window.location = url;
+            }
+        };
+        gtag('event', 'conversion', {
+            'send_to': 'AW-10943248379/zc51CP29ybIYEPvvkuIo',
+            'event_callback': callback
+        });
+        return false;
+    }
+
     onMount(() => {
         username = localStorage.getItem('username') || '';
         const handleScroll = () => {
@@ -16,19 +29,25 @@
         };
 
         if (data && data.jwt) {
-            gtag('event', 'conversion', {'send_to': 'AW-10943248379/zc51CP29ybIYEPvvkuIo'});
+            gtag_report_conversion();
         }
-
-        window.addEventListener('scroll', handleScroll);
-
-        return () => {
-            window.removeEventListener('scroll', handleScroll);
-        };
-    });
-
-    function scrollToContinue() {
-        window.scrollBy({top: window.innerHeight, behavior: 'smooth'});
     }
+
+
+</script>
+
+}
+
+window.addEventListener('scroll', handleScroll);
+
+return () => {
+    window.removeEventListener('scroll', handleScroll);
+};
+});
+
+function scrollToContinue() {
+    window.scrollBy({top: window.innerHeight, behavior: 'smooth'});
+}
 </script>
 
 <svelte:head>
