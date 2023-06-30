@@ -1,5 +1,5 @@
 <script>
-	import { PUBLIC_CORBADO_AUTHENTICATION_URL } from '$env/static/public';
+	import { PUBLIC_CORBADO_FRONTENDAPI_URL } from '$env/static/public';
 	import Corbado from '@corbado/webcomponent';
 	import '@corbado/webcomponent/pkg/auth_cui.css';
 	import { Button, Card, Heading } from 'flowbite-svelte';
@@ -9,7 +9,7 @@
 
 	let scrollVisible = true;
 	let username = '';
-	const corbado = new Corbado.Session(PUBLIC_CORBADO_AUTHENTICATION_URL);
+	const corbado = new Corbado.Session(PUBLIC_CORBADO_FRONTENDAPI_URL);
 
 	const corbadoUser = corbado.initialize((user) => {
 		console.log(user);
@@ -63,7 +63,7 @@
 			{:else}
 				<corbado-auth
 					style="border: none; padding: 0px"
-					endpoint={PUBLIC_CORBADO_AUTHENTICATION_URL}
+					endpoint={PUBLIC_CORBADO_FRONTENDAPI_URL}
 					conditional="yes"
 					auto_detect_language="no"
 					fallback_language="en"
