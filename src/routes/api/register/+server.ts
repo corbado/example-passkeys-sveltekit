@@ -1,6 +1,6 @@
 // +server.ts
 import Session from './session';
-import { PUBLIC_CORBADO_AUTHENTICATION_URL } from '$env/static/public';
+import { PUBLIC_CORBADO_FRONTENDAPI_URL } from '$env/static/public';
 import { error, redirect, type RequestHandler } from '@sveltejs/kit';
 
 export const GET = (async ({ request, cookies }) => {
@@ -8,8 +8,8 @@ export const GET = (async ({ request, cookies }) => {
 	const shortSessionToken = cookies.get('cbo_short_session');
 	const session = new Session(
 		'cbo_short_session',
-		PUBLIC_CORBADO_AUTHENTICATION_URL,
-		PUBLIC_CORBADO_AUTHENTICATION_URL + '/.well-known/jwks',
+		PUBLIC_CORBADO_FRONTENDAPI_URL,
+		PUBLIC_CORBADO_FRONTENDAPI_URL + '/.well-known/jwks',
 		60000
 	);
 
