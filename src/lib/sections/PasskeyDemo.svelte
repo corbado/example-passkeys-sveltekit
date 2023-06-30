@@ -1,13 +1,19 @@
-<script lang="ts">
-	import { PUBLIC_CORBADO_PROJECT_ID } from '$env/static/public';
+<script>
+	import { PUBLIC_CORBADO_AUTHENTICATION_URL } from '$env/static/public';
+	import Corbado from '@corbado/webcomponent';
+	import '@corbado/webcomponent/pkg/auth_cui.css';
 	import { Button, Card, Heading } from 'flowbite-svelte';
 	import { onMount } from 'svelte';
-	import type { PageData } from '../../routes/$types';
 
-	export let data: PageData;
+	export let data;
 
 	let scrollVisible = true;
 	let username = '';
+	const corbado = new Corbado.Session(PUBLIC_CORBADO_AUTHENTICATION_URL);
+
+	const corbadoUser = corbado.initialize((user) => {
+		console.log(user);
+	});
 
 	onMount(() => {
 		username = localStorage.getItem('username') || '';
@@ -27,10 +33,6 @@
 	}
 </script>
 
-<svelte:head>
-	<script defer src="https://auth.corbado.com/auth.js"></script>
-</svelte:head>
-
 <section class="bg-secondary h-screen">
 	<div
 		class="mx-auto max-w-screen-xl flex flex-col text-center items-center justify-center w-full h-full"
@@ -44,7 +46,7 @@
 			{:else}
 				<corbado-auth
 					style="border: none; padding: 0px"
-					project_id={PUBLIC_CORBADO_PROJECT_ID}
+					endpoint={PUBLIC_CORBADO_AUTHENTICATION_URL}
 					conditional="yes"
 					auto_detect_language="no"
 					fallback_language="en"
