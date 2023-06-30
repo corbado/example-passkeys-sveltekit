@@ -15,6 +15,9 @@ dependencies:
     version: 0.34.9(@popperjs/core@2.11.7)(classnames@2.3.2)(flowbite@1.6.5)(svelte@3.58.0)
 
 devDependencies:
+  '@corbado/webcomponent':
+    specifier: ^1.0.20
+    version: 1.0.20
   '@sveltejs/adapter-auto':
     specifier: ^2.0.0
     version: 2.0.0(@sveltejs/kit@1.15.2)
@@ -39,6 +42,9 @@ devDependencies:
   eslint-plugin-svelte3:
     specifier: ^4.0.0
     version: 4.0.0(eslint@8.38.0)(svelte@3.58.0)
+  jose:
+    specifier: ^4.14.4
+    version: 4.14.4
   only-allow:
     specifier: ^1.1.1
     version: 1.1.1
@@ -77,6 +83,13 @@ devDependencies:
     version: 4.2.1
 
 packages:
+
+  /@corbado/webcomponent@1.0.20:
+    resolution: {integrity: sha512-xlHaesSYMBiQ20+M0PbjosxrSw/NYcIBzdDVbXgJZbDazFkqLZA+T46LyjLIkIGy4+ZYMIbH6pBhVY+JRBRP2g==}
+    dependencies:
+      jose: 4.14.4
+      js-cookie: 3.0.5
+    dev: true
 
   /@esbuild/android-arm64@0.17.16:
     resolution: {integrity: sha512-QX48qmsEZW+gcHgTmAj+x21mwTz8MlYQBnzF6861cNdQGvj2jzzFjqH0EBabrIa/WVZ2CHolwMoqxVryqKt8+Q==}
@@ -1341,6 +1354,15 @@ packages:
   /jiti@1.18.2:
     resolution: {integrity: sha512-QAdOptna2NYiSSpv0O/BwoHBSmz4YhpzJHyi+fnMRTXFjp7B8i/YG5Z8IfusxB1ufjcD2Sre1F3R+nX3fvy7gg==}
     hasBin: true
+    dev: true
+
+  /jose@4.14.4:
+    resolution: {integrity: sha512-j8GhLiKmUAh+dsFXlX1aJCbt5KMibuKb+d7j1JaOJG6s2UjX1PQlW+OKB/sD4a/5ZYF4RcmYmLSndOoU3Lt/3g==}
+    dev: true
+
+  /js-cookie@3.0.5:
+    resolution: {integrity: sha512-cEiJEAEoIbWfCZYKWhVwFuvPX1gETRYPw6LlaTKoxD3s2AkXzkCjnp6h0V77ozyqj0jakteJ4YqDJT830+lVGw==}
+    engines: {node: '>=14'}
     dev: true
 
   /js-sdsl@4.4.0:

@@ -15,6 +15,10 @@ const config = {
 
 	kit: {
 		adapter: adapter()
+	},
+
+	ssr: {
+		noExternal: ['@corbado/webcomponent']
 	}
 };
 
