@@ -10,7 +10,7 @@
 			var _paq = window._paq = window._paq || [];
 			/* tracker methods like "setCustomDimension" should be called before "trackPageView" */
 			_paq.push(["setCookieDomain", "*.passkeys.eu"]);
-			_paq.push(["setDomains", ["*.passkeys.eu","*.passkeys.fr"]]);
+			_paq.push(["setDomains", ["*.passkeys.eu","*.passkeys.fr", "*.passkeys-demo.pages.dev"]]);
 			_paq.push(["enableCrossDomainLinking"]);
 			_paq.push(['trackPageView']);
 			_paq.push(['enableLinkTracking']);
@@ -23,6 +23,14 @@
 			})();
 		</script>
 		<!-- End Matomo Code -->
+		<!-- Matomo Tag Manager -->
+		<script>
+			var _mtm = window._mtm = window._mtm || [];
+			_mtm.push({'mtm.startTime': (new Date().getTime()), 'event': 'mtm.Start'});
+			var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+			g.async=true; g.src='https://analytics.corbado.com/js/container_KKl8oHi5.js'; s.parentNode.insertBefore(g,s);
+		</script>
+		<!-- End Matomo Tag Manager -->
 	</head>
 	<body data-sveltekit-preload-data="hover">
 		<div style="display: contents">%sveltekit.body%</div>
