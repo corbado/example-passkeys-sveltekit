@@ -6,7 +6,7 @@ settings:
 
 dependencies:
   '@corbado/webcomponent':
-    specifier: ^1.0.40
+    specifier: ^1.0.39
     version: 1.0.40
   '@popperjs/core':
     specifier: ^2.11.7
