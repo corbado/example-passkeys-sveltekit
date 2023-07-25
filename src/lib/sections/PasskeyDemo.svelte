@@ -1,5 +1,5 @@
 <script>
-	import { PUBLIC_CORBADO_FRONTENDAPI_URL } from '$env/static/public';
+	import {PUBLIC_CORBADO_FRONTENDAPI_URL, PUBLIC_CORBADO_PROJECT_ID} from '$env/static/public';
 	import Corbado from '@corbado/webcomponent';
 	import '@corbado/webcomponent/pkg/auth_cui.css';
 	import { Button, Card, Heading } from 'flowbite-svelte';
@@ -9,7 +9,7 @@
 
 	let scrollVisible = true;
 	let username = '';
-	const corbado = new Corbado.Session(PUBLIC_CORBADO_FRONTENDAPI_URL);
+	const corbado = new Corbado.Session(PUBLIC_CORBADO_PROJECT_ID);
 
 	const corbadoUser = corbado.refresh((user) => {
 		console.log(user);
