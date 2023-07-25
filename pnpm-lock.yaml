@@ -7,7 +7,7 @@ settings:
 dependencies:
   '@corbado/webcomponent':
     specifier: ^1.0.39
-    version: 1.0.40
+    version: 1.0.39
   '@popperjs/core':
     specifier: ^2.11.7
     version: 2.11.7
@@ -88,8 +88,8 @@ devDependencies:
 
 packages:
 
-  /@corbado/webcomponent@1.0.40:
-    resolution: {integrity: sha512-J59WD7MgXln5bsZmc5Cf1wYsBctWSk00dzzhRn3uBzHfvf+ME7w9mC2pVexGMKuO1o8DmTNbuxnFZ+389wjMeQ==}
+  /@corbado/webcomponent@1.0.39:
+    resolution: {integrity: sha512-+g/2wiHi11fPn1ypDupSv2zti6n1rPnxJ1HZlRdLVF8FbQBJiDd23zmkIfzWf+sjoJDW/eJNoe4NznSmlD6i2A==}
     dependencies:
       jose: 4.14.4
       js-cookie: 3.0.5
