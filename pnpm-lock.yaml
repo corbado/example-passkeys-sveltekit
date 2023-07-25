@@ -1,6 +1,13 @@
 lockfileVersion: '6.0'
 
+settings:
+  autoInstallPeers: true
+  excludeLinksFromLockfile: false
+
 dependencies:
+  '@corbado/webcomponent':
+    specifier: ^1.0.39
+    version: 1.0.40
   '@popperjs/core':
     specifier: ^2.11.7
     version: 2.11.7
@@ -15,9 +22,6 @@ dependencies:
     version: 0.34.9(@popperjs/core@2.11.7)(classnames@2.3.2)(flowbite@1.6.5)(svelte@3.58.0)
 
 devDependencies:
-  '@corbado/webcomponent':
-    specifier: ^1.0.20
-    version: 1.0.20
   '@sveltejs/adapter-auto':
     specifier: ^2.0.0
     version: 2.0.0(@sveltejs/kit@1.15.2)
@@ -84,12 +88,12 @@ devDependencies:
 
 packages:
 
-  /@corbado/webcomponent@1.0.20:
-    resolution: {integrity: sha512-xlHaesSYMBiQ20+M0PbjosxrSw/NYcIBzdDVbXgJZbDazFkqLZA+T46LyjLIkIGy4+ZYMIbH6pBhVY+JRBRP2g==}
+  /@corbado/webcomponent@1.0.40:
+    resolution: {integrity: sha512-J59WD7MgXln5bsZmc5Cf1wYsBctWSk00dzzhRn3uBzHfvf+ME7w9mC2pVexGMKuO1o8DmTNbuxnFZ+389wjMeQ==}
     dependencies:
       jose: 4.14.4
       js-cookie: 3.0.5
-    dev: true
+    dev: false
 
   /@esbuild/android-arm64@0.17.16:
     resolution: {integrity: sha512-QX48qmsEZW+gcHgTmAj+x21mwTz8MlYQBnzF6861cNdQGvj2jzzFjqH0EBabrIa/WVZ2CHolwMoqxVryqKt8+Q==}
@@ -1358,12 +1362,11 @@ packages:
 
   /jose@4.14.4:
     resolution: {integrity: sha512-j8GhLiKmUAh+dsFXlX1aJCbt5KMibuKb+d7j1JaOJG6s2UjX1PQlW+OKB/sD4a/5ZYF4RcmYmLSndOoU3Lt/3g==}
-    dev: true
 
   /js-cookie@3.0.5:
     resolution: {integrity: sha512-cEiJEAEoIbWfCZYKWhVwFuvPX1gETRYPw6LlaTKoxD3s2AkXzkCjnp6h0V77ozyqj0jakteJ4YqDJT830+lVGw==}
     engines: {node: '>=14'}
-    dev: true
+    dev: false
 
   /js-sdsl@4.4.0:
     resolution: {integrity: sha512-FfVSdx6pJ41Oa+CF7RDaFmTnCaFhua+SNYQX74riGOpl96x+2jQCqEfQ2bnXu/5DPCqlRuiqyvTJM0Qjz26IVg==}

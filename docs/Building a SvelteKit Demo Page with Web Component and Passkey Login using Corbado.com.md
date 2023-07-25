@@ -221,7 +221,7 @@ Then we can include it:
 	register_btn="Passkey signup"
 	page="register"
 >
-	<input name="username" id="Corbado-username" value="" required autocomplete="webauthn" />
+	<input name="username" id="Corbado-username" required autocomplete="webauthn" />
 </Corbado-auth>
 ```
 

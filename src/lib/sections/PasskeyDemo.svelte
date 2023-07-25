@@ -11,7 +11,7 @@
 	let username = '';
 	const corbado = new Corbado.Session(PUBLIC_CORBADO_FRONTENDAPI_URL);
 
-	const corbadoUser = corbado.initialize((user) => {
+	const corbadoUser = corbado.refresh((user) => {
 		console.log(user);
 	});
 
