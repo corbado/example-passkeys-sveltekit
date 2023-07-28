@@ -11,7 +11,7 @@
 			<Heading tag="h6" class="text-info mb-4">IMPROVE UX WHILE BOOSTING SECURITY</Heading>
 			<Heading tag="h2" class="mb-8">Why passkeys?</Heading>
 			<P class="mb-8">
-				Stand out as a customer- & privacy-driven company. Transition your users from passwords to
+				Stand out as a user- & privacy-driven company. Transition your users from passwords to
 				passkeys.
 			</P>
 		</div>
