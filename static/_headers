@@ -1,8 +1,2 @@
-https://passkeys.eu/*
-    Content-Security-Policy: frame-ancestors 'self' corbado.com *.corbado.com corbado.io *.corbado.io
-
-https://passkeys.fr/*
-    Content-Security-Policy: frame-ancestors 'self' corbado.com *.corbado.com corbado.io *.corbado.io
-
-https://passkeys-demo.pages.dev/*
-    Content-Security-Policy: frame-ancestors 'self' corbado.com *.corbado.com corbado.io *.corbado.io
+/*
+  X-Frame-Options: DENY
