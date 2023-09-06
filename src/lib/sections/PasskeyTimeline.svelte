@@ -72,7 +72,7 @@
 						</svelte:fragment>
 						<p class="text-base font-normal text-gray-500 dark:text-gray-400 px-4">
 							{#if timelineItem.link}
-								<A href={timelineItem.link} target="_blank">announces passkeys</A>
+								<A href={timelineItem.link} target="_blank" rel="nofollow">announces passkeys</A>
 								{timelineItem.text}
 							{:else}
 								{timelineItem.text}
@@ -82,14 +82,14 @@
 				{/each}
 			</Timeline>
 			<P class="mt-16 text-center font-normal text-gray-500 dark:text-gray-400 px-4  mx-auto">
-				The three digital leaders -
-				<A href="https://apple.com" target="_blank">Apple</A>,
-				<A href="https://google.com" target="_blank">Google</A>,
-				<A href="https://microsoft.com" target="_blank">Microsoft</A> - fully support passkeys in their
+				The three digital leaders
+				<A href="https://apple.com" target="_blank" rel="nofollow">Apple</A>,
+				<A href="https://google.com" target="_blank" rel="nofollow">Google</A>,
+				<A href="https://microsoft.com" target="_blank" rel="nofollow">Microsoft</A> fully support passkeys in their
 				operating systems, devices and browsers, enforcing passkeys as new login standard. Passkeys are
-				based on <A href="https://fidoalliance.org/fido2/" target="_blank">FIDO2</A>
-				and WebAuthn, a capability that enables devices to authenticate in a websites or apps.
-				<A href="https://www.corbado.com/passkeys/adoption" target="_blank"
+				based on <A href="https://fidoalliance.org/fido2/" target="_blank" rel="nofollow">FIDO2</A>
+				and WebAuthn, a capability that enables devices to authenticate in websites or apps.
+				<A href="https://www.corbado.com/passkeys/adoption" target="_blank" rel="follow"
 					>See more companies adopting passkeys.</A
 				>
 			</P>

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import sample from '$lib/assets/auth-sample.svg';
+	import sample from '$lib/assets/auth-sample.png';
 	import { Heading, Img, P } from 'flowbite-svelte';
 </script>
 
@@ -10,7 +10,7 @@
 		<div class="w-full text-center md:text-start">
 			<Heading tag="h6" class="text-info mb-4">LOG INTO ANY WEBSITE WITH FACE ID</Heading>
 			<Heading tag="h2" class="mb-8">What are passkeys?</Heading>
-			<P class="mb-8">
+			<P class="mb-8 text-center md:text-start">
 				Passkeys replace passwords and allow users to login with, e.g. Face ID or Touch ID, instead
 				of passwords. They are a secure and convenient form of passwordless authentication.
 			</P>
