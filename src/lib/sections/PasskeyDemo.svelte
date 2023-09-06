@@ -54,7 +54,7 @@
 	<div
 		class="mx-auto max-w-screen-xl flex flex-col text-center items-center justify-center w-full h-full"
 	>
-		<Heading tag="h1" class="mb-8 md:mb-16">Passkey demo</Heading>
+		<Heading tag="h1" class="mb-8 md:mb-16">Passkeys demo</Heading>
 		<Card class="w-11/12 md:w-full mb-16">
 			{#if data && data.jwt}
 				<Heading tag="h4">That’s it.</Heading>
