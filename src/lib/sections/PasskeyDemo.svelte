@@ -15,11 +15,28 @@
 		console.log(user);
 	});
 
+	function gtag_report_conversion(url) {
+		var callback = function () {
+			if (typeof url != 'undefined') {
+				window.location = url;
+			}
+		};
+		gtag('event', 'conversion', {
+			send_to: 'AW-10943248379/zc51CP29ybIYEPvvkuIo',
+			event_callback: callback
+		});
+		return false;
+	}
+
 	onMount(() => {
 		username = localStorage.getItem('username') || '';
 		const handleScroll = () => {
 			scrollVisible = window.scrollY < 50;
 		};
+
+		if (data && data.jwt) {
+			gtag_report_conversion();
+		}
 
 		window.addEventListener('scroll', handleScroll);
 
