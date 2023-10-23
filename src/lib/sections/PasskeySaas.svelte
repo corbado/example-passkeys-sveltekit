@@ -1,6 +1,5 @@
 <script lang="ts">
 	import devices from '$lib/assets/devices.svg';
-	import europe from '$lib/assets/europe.png';
 	import CheckItem from '$lib/components/CheckItem.svelte';
 	import { Button, Heading, Img, P } from 'flowbite-svelte';
 </script>
@@ -12,7 +11,7 @@
 		<div class="w-full text-center md:text-start">
 			<Heading tag="h6" class="text-info mb-4">CORBADO OFFERS PASSKEYS-AS-A-SERVICE</Heading>
 			<Heading tag="h2" class="mb-8">How to integrate passkeys?</Heading>
-			<P class="mb-8">
+			<P class="mb-8 text-center md:text-start">
 				Corbado helps you transition your users to passkeys risk-free within &lt1 hour. Provide the
 				best passwordless login experience now.
 			</P>
@@ -25,13 +24,9 @@
 				Start for free
 			</Button>
 			<div class="flex flex-col items-center md:flex-row gap-4 mt-8 mb-4 md:mb-0">
-				<CheckItem title="Keep all user data" />
+				<CheckItem title="Free community plan" />
 				<CheckItem title="Integration in <1h" />
-				<CheckItem title="GDPR compliant">
-					<svelte:fragment slot="icon">
-						<Img src={europe} class="rounded-full ml-2" size="w-7" />
-					</svelte:fragment>
-				</CheckItem>
+				<CheckItem title="For new/existing apps" />
 			</div>
 		</div>
 		<div class="w-full">

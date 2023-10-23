@@ -1,7 +1,7 @@
 <script>
 	import corbado from '$lib/assets/corbado.png';
 	import github from '$lib/assets/github.png';
-	import slack from '$lib/assets/slack.webp';
+	import slack from '$lib/assets/slack.png';
 	import twitter from '$lib/assets/twitter.png';
 	import { A, FooterBrand, Heading, Img } from 'flowbite-svelte';
 </script>
@@ -11,7 +11,7 @@
 >
 	<Heading class="mb-6" tag="h3">Powered by</Heading>
 	<div class="mb-16">
-		<FooterBrand href="https://corbado.com" src={corbado} alt="Corbado Logo" name="Corbado" />
+		<FooterBrand href="https://www.corbado.com" src={corbado} alt="Corbado Logo" name="Corbado" />
 	</div>
 	<div>
 		<Heading class="mb-6" tag="h3">Join the discussion</Heading>

@@ -10,7 +10,7 @@
 		<div class="w-full text-center md:text-start">
 			<Heading tag="h6" class="text-info mb-4">IMPROVE UX WHILE BOOSTING SECURITY</Heading>
 			<Heading tag="h2" class="mb-8">Why passkeys?</Heading>
-			<P class="mb-8">
+			<P class="mb-8 text-center md:text-start">
 				Stand out as a user- & privacy-driven company. Transition your users from passwords to
 				passkeys.
 			</P>

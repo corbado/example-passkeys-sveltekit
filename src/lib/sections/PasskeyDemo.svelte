@@ -1,5 +1,5 @@
 <script>
-	import {PUBLIC_CORBADO_FRONTENDAPI_URL, PUBLIC_CORBADO_PROJECT_ID} from '$env/static/public';
+	import {PUBLIC_CORBADO_PROJECT_ID} from '$env/static/public';
 	import Corbado from '@corbado/webcomponent';
 	import '@corbado/webcomponent/pkg/auth_cui.css';
 	import { Button, Card, Heading } from 'flowbite-svelte';
@@ -54,7 +54,7 @@
 	<div
 		class="mx-auto max-w-screen-xl flex flex-col text-center items-center justify-center w-full h-full"
 	>
-		<Heading tag="h1" class="mb-8 md:mb-16">Passkey demo</Heading>
+		<Heading tag="h1" class="mb-8 md:mb-16">Passkeys demo</Heading>
 		<Card class="w-11/12 md:w-full mb-16">
 			{#if data && data.jwt}
 				<Heading tag="h4">That’s it.</Heading>
@@ -63,7 +63,7 @@
 			{:else}
 				<corbado-auth
 					style="border: none; padding: 0px"
-					endpoint={PUBLIC_CORBADO_FRONTENDAPI_URL}
+					project-id={PUBLIC_CORBADO_PROJECT_ID}
 					conditional="yes"
 					auto_detect_language="no"
 					fallback_language="en"
