@@ -2,7 +2,7 @@
 	import corbado from '$lib/assets/corbado.png';
 	import github from '$lib/assets/github.png';
 	import slack from '$lib/assets/slack.png';
-	import twitter from '$lib/assets/twitter.png';
+	import x from '$lib/assets/x-logo.svg';
 	import { A, FooterBrand, Heading, Img } from 'flowbite-svelte';
 </script>
 
@@ -26,7 +26,7 @@
 				<Img src={github} size="w-10" />
 			</A>
 			<A href="https://twitter.com/corbado_tech" target="_blank">
-				<Img src={twitter} size="w-10" />
+				<Img src={x} size="w-10" />
 			</A>
 		</div>
 	</div>
