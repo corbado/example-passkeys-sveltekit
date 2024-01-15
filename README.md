@@ -2,6 +2,8 @@
 
 This is a sample implementation of the Corbado web component being integrated into a web page built with SvelteKit to showcase passkey authentication. You can see the demo live on <https://passkeys.eu> or <https://passkeys.fr>.
 
+Please see the [full blog post](https://www.corbado.com/blog/sveltekit-passkeys) to understand all the required steps to integrate passkeys into SvelteKit apps.
+
 ## File structure
 
 - `src/lib` contains reusable files such as `assets`, `components` or `sections` used in the app
