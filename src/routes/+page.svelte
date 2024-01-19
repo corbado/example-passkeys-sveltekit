@@ -5,6 +5,7 @@
     import PasskeySaas from '$lib/sections/PasskeySaas.svelte';
     import PasskeyStats from '$lib/sections/PasskeyStats.svelte';
     import PasskeyTimeline from '$lib/sections/PasskeyTimeline.svelte';
+    import PasskeyList from '$lib/components/PasskeyList.svelte';
     import type {PageData} from './$types';
 
     export let data: PageData;
@@ -29,6 +30,8 @@
     <meta property="og:url" content="https://passkeys.eu"/>
     <meta property="og:type" content="website"/>
 </svelte:head>
+
+<PasskeyList />
 
 <PasskeyDemo {data}/>
 
