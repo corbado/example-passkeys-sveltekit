@@ -5,5 +5,5 @@
 </script>
 
 <div>
-    <p>{passkey.id}</p>
+    <p>{passkey.backupState}</p>
 </div>

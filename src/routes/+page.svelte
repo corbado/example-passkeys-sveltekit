@@ -31,8 +31,6 @@
     <meta property="og:type" content="website"/>
 </svelte:head>
 
-<PasskeyList />
-
 <PasskeyDemo {data}/>
 
 <PasskeyExplainer/>

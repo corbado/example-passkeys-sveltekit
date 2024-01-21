@@ -1,5 +1,6 @@
 <script>
-	import {PUBLIC_CORBADO_PROJECT_ID} from '$env/static/public';
+	import { PUBLIC_CORBADO_PROJECT_ID } from '$env/static/public';
+	import PasskeyList from '$lib/components/PasskeyList.svelte';
 	import Corbado from '@corbado/webcomponent';
 	import '@corbado/webcomponent/pkg/auth_cui.css';
 	import { Button, Card, Heading } from 'flowbite-svelte';
@@ -15,13 +16,11 @@
 		console.log(user);
 	});
 
-
 	onMount(() => {
 		username = localStorage.getItem('username') || '';
 		const handleScroll = () => {
 			scrollVisible = window.scrollY < 50;
 		};
-
 
 		window.addEventListener('scroll', handleScroll);
 
@@ -44,6 +43,7 @@
 			{#if data && data.jwt}
 				<Heading tag="h4">That’s it.</Heading>
 				<Heading tag="h4">You’re logged in.​</Heading>
+				<PasskeyList />
 				<Button href="/api/logout" pill class="bg-primary text-white mt-8 ">Log out</Button>
 			{:else}
 				<corbado-auth
