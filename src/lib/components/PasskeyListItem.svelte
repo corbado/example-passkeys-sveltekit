@@ -4,7 +4,6 @@
 	import { UAParser } from 'ua-parser-js';
 
 	export let passkey: Passkey;
-	export let handlePasskeyDelete: () => Promise<void>;
 
 	function parseUserAgent(uaString: string): string {
 		const parser = new UAParser(uaString);
@@ -33,7 +32,4 @@
 			<p>Status: {passkey.status ? 'active' : 'inactive'}</p>
 		</div>
 	</div>
-	<button on:click={handlePasskeyDelete} class="w-[30px] h-[30px] grow-0 shrink-0">
-		<img src="/delete_icon.svg" alt="delete icon" />
-	</button>
 </div>
