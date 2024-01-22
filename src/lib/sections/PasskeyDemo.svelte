@@ -34,16 +34,15 @@
 	}
 </script>
 
-<section class="bg-secondary h-screen">
+<section class="bg-secondary">
 	<div
-		class="mx-auto max-w-screen-xl flex flex-col text-center items-center justify-center w-full h-full"
+		class="mx-auto max-w-screen-xl flex flex-col text-center items-center justify-center w-full min-h-screen py-8"
 	>
-		<Heading tag="h1" class="mb-8 md:mb-16">Passkeys demo</Heading>
-		<Card class="w-11/12 md:w-full mb-16">
+		<Heading tag="h1" class="mb-8 md:mb-12">Passkeys demo</Heading>
+		<Card class="w-11/12 md:w-full mb-12">
 			{#if data && data.jwt}
 				<Heading tag="h4">That’s it.</Heading>
 				<Heading tag="h4">You’re logged in.​</Heading>
-				<PasskeyList />
 				<Button href="/api/logout" pill class="bg-primary text-white mt-8 ">Log out</Button>
 			{:else}
 				<corbado-auth
@@ -56,7 +55,7 @@
 					login_btn="Passkey login"
 					register_title="Try passkey signup"
 					register_btn="Passkey signup"
-					page={data.signedIn ? 'login' : 'register'}
+					endpoint="https://auth.passkeys.eu"
 				>
 					<input
 						name="username"
@@ -68,6 +67,12 @@
 				</corbado-auth>
 			{/if}
 		</Card>
+		{#if data && data.jwt}
+			<div class="max-w-[90%]">
+				<PasskeyList />
+			</div>
+		{/if}
+
 		<button
 			class="invisible md:visible opacity-100 transition-opacity duration-300 absolute bottom-8 left-1/2 transform -translate-x-1/2 bg-white bg-opacity-70 py-2 px-4 rounded-full text-black focus:outline-none"
 			style="opacity: {scrollVisible ? 1 : 0}; transition: opacity 300ms;"

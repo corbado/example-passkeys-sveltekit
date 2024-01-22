@@ -21,22 +21,8 @@ export const GET = (async ({request, cookies}) => {
             throw error(401, 'Invalid session token');
         }
 
-        cookies.set('signedIn', 'true', {
-            httpOnly: true,
-            path: '/',
-            sameSite: 'lax',
-            secure: true
-        });
-
         throw redirect(303, '/');
     } catch (e) {
-        cookies.set('signedIn', 'false', {
-            httpOnly: true,
-            path: '/',
-            sameSite: 'lax',
-            secure: true
-        });
-
         throw redirect(303, '/#login');
     }
 }) satisfies RequestHandler;

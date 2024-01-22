@@ -1,13 +1,11 @@
 import type { PageServerLoad } from './$types';
 
 export const load = (async ({ cookies }) => {
-	const signedIn = cookies.get('signedIn');
+	//TODO: implement serverside auth state verification here
 	const jwt = cookies.get('cbo_short_session');
-	console.log(signedIn);
 	console.log(jwt);
 
 	return {
-		jwt,
-		signedIn
+		jwt
 	};
 }) satisfies PageServerLoad;
