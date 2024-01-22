@@ -12,7 +12,6 @@
 	async function getPasskeys() {
 		const url = `${PUBLIC_BASE_REQUEST_URL}/v1/me/passkeys`;
 		try {
-			//TODO: doesnt work independent of cookie settings
 			const response = await axios.get(url, {
 				withCredentials: true,
 				headers: {

@@ -32,6 +32,10 @@
 	function scrollToContinue() {
 		window.scrollBy({ top: window.innerHeight, behavior: 'smooth' });
 	}
+	function deleteCookie(cookieName) {
+        const expires = 'expires=Thu, 01 Jan 1970 00:00:00 UTC';
+        document.cookie = `${cookieName}=; ${expires}; path=/`;
+    }
 </script>
 
 <section class="bg-secondary">
@@ -43,7 +47,7 @@
 			{#if data && data.jwt}
 				<Heading tag="h4">That’s it.</Heading>
 				<Heading tag="h4">You’re logged in.​</Heading>
-				<Button href="/api/logout" pill class="bg-primary text-white mt-8 ">Log out</Button>
+				<Button href="/api/logout" pill class="bg-primary text-white mt-8" on:click={() => deleteCookie('cbo_short_session')}>Log out</Button>
 			{:else}
 				<corbado-auth
 					style="border: none; padding: 0px"

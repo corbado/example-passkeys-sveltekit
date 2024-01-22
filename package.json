@@ -37,6 +37,7 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"@corbado/node-sdk": "^2.0.0",
 		"@corbado/webcomponent": "^1.0.104",
 		"@popperjs/core": "^2.11.7",
 		"@simplewebauthn/browser": "^9.0.0",

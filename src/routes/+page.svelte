@@ -5,7 +5,6 @@
     import PasskeySaas from '$lib/sections/PasskeySaas.svelte';
     import PasskeyStats from '$lib/sections/PasskeyStats.svelte';
     import PasskeyTimeline from '$lib/sections/PasskeyTimeline.svelte';
-    import PasskeyList from '$lib/components/PasskeyList.svelte';
     import type {PageData} from './$types';
 
     export let data: PageData;
