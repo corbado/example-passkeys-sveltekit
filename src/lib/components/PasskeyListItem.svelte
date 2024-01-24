@@ -26,7 +26,7 @@
 			{/if}
 		</div>
 		<div class="flex flex-col gap-2">
-			<p>Credential ID: {passkey.aaguid}</p>
+			<p>Credential ID: {passkey.id}</p>
 			<p>Created: {passkey.created} with {parseUserAgent(passkey.userAgent)}</p>
 			<p>Last used: {passkey.lastUsed}</p>
 			<p>Status: {passkey.status ? 'active' : 'inactive'}</p>
