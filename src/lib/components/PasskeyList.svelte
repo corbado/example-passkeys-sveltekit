@@ -34,7 +34,7 @@
 {#if passkeys.length > 0}
 	<section class="bg-white shadow-lg rounded-xl py-4 px-6 text-left">
 		<h2 class="my-2 text-xl">Your passkeys:</h2>
-		<ul>
+		<ul class="flex flex-col gap-3">
 			{#each passkeys as passkey}
 				<li>
 					<PasskeyListItem {passkey} />
