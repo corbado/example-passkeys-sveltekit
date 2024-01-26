@@ -5,9 +5,6 @@
     import PasskeySaas from '$lib/sections/PasskeySaas.svelte';
     import PasskeyStats from '$lib/sections/PasskeyStats.svelte';
     import PasskeyTimeline from '$lib/sections/PasskeyTimeline.svelte';
-    import type {PageData} from './$types';
-
-    export let data: PageData;
 </script>
 
 <svelte:head>
@@ -30,7 +27,7 @@
     <meta property="og:type" content="website"/>
 </svelte:head>
 
-<PasskeyDemo {data}/>
+<PasskeyDemo/>
 
 <PasskeyExplainer/>
 
