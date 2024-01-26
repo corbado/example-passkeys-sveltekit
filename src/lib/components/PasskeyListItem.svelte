@@ -1,6 +1,5 @@
 <script lang="ts">
 	import type Passkey from './passkey';
-	// @ts-ignore
 	import { UAParser } from 'ua-parser-js';
 
 	export let passkey: Passkey;
