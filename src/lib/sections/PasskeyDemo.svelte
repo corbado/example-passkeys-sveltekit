@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { PUBLIC_CORBADO_PROJECT_ID } from '$env/static/public';
-	import corbado from '@corbado/web-js';
+	import Corbado from '@corbado/web-js';
 	import { Button, Heading } from 'flowbite-svelte';
 	import { onMount } from 'svelte';
 
@@ -8,24 +8,24 @@
 	let authenticated = false;
 
 	onMount(async () => {
-		await corbado
+		await Corbado
 			.load({
 				//@ts-ignore
 				projectId: PUBLIC_CORBADO_PROJECT_ID,
 				darkMode: 'off'
 			})
 			.then(() => {
-				authenticated = corbado.isAuthenticated ?? false;
+				authenticated = Corbado.isAuthenticated ?? false;
 			});
 		$: if (authenticated) {
 			const passkeyListElement = document.getElementById('corbado-passkey-list');
 			if (passkeyListElement) {
-				corbado.mountPasskeyListUI(passkeyListElement);
+				Corbado.mountPasskeyListUI(passkeyListElement);
 			}
 		} else {
 			const authElement = document.getElementById('corbado-auth');
 			if (authElement) {
-				corbado.mountAuthUI(authElement, {
+				Corbado.mountAuthUI(authElement, {
 					onLoggedIn: () => {
 						window.location.href = '/';
 					},
@@ -65,7 +65,7 @@
 					href="/api/logout"
 					pill
 					class="bg-primary text-white my-5"
-					on:click={() => corbado.logout()}
+					on:click={() => Corbado.logout()}
 				>
 					Log out
 				</Button>
