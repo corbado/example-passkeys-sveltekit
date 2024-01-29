@@ -2,22 +2,19 @@
 	import { PUBLIC_CORBADO_PROJECT_ID } from '$env/static/public';
 	import Corbado from '@corbado/web-js';
 	import { Button, Heading } from 'flowbite-svelte';
-	import { onMount } from 'svelte';
+	import { onMount, afterUpdate } from 'svelte';
 
 	let scrollVisible = true;
 	let authenticated = false;
 
 	onMount(async () => {
-		await Corbado
-			.load({
-				//@ts-ignore
-				projectId: PUBLIC_CORBADO_PROJECT_ID,
-				darkMode: 'off'
-			})
-			.then(() => {
-				authenticated = Corbado.isAuthenticated ?? false;
-			});
-		$: if (authenticated) {
+		await Corbado.load({
+			//@ts-ignore
+			projectId: PUBLIC_CORBADO_PROJECT_ID,
+			darkMode: 'off'
+		});
+		authenticated = Corbado.isAuthenticated ?? false;
+		if (authenticated) {
 			const passkeyListElement = document.getElementById('corbado-passkey-list');
 			if (passkeyListElement) {
 				Corbado.mountPasskeyListUI(passkeyListElement);
@@ -33,6 +30,7 @@
 				});
 			}
 		}
+
 		const handleScroll = () => {
 			scrollVisible = window.scrollY < 50;
 		};
@@ -56,24 +54,26 @@
 		<Heading tag="h1" class="mb-8 md:mb-12">Passkeys demo</Heading>
 
 		<div
-			class="bg-white rounded-xl max-w-[90%] overflow-hidden shadow-lg {authenticated ? 'p-4' : ''} transition-transform duration-300"
+			class="bg-white rounded-xl max-w-[90%] overflow-hidden shadow-lg {authenticated ? 'p-4' : ''}"
 		>
 			{#if authenticated}
 				<Heading tag="h4">That's it.</Heading>
 				<Heading tag="h4">You're logged in.</Heading>
 				<Button
-					href="/api/logout"
 					pill
 					class="bg-primary text-white my-5"
-					on:click={() => Corbado.logout()}
+					on:click={() => {
+						Corbado.logout();
+						authenticated = false;
+						window.location.href = '/';
+					}}
 				>
 					Log out
 				</Button>
 				<Heading tag="h4">These are your passkeys:</Heading>
-				<div id="corbado-passkey-list" />
-			{:else}
-				<div id="corbado-auth" />
 			{/if}
+			<div id="corbado-passkey-list" />
+			<div id="corbado-auth" />
 		</div>
 
 		<button
@@ -87,10 +87,10 @@
 </section>
 
 <style>
-	:global(.cb-passkey-list-card) {
+	:global(.cb-passkey-list-details) {
 		text-align: left;
 	}
 	:global(.cb-container) {
-		width: min(30rem, 90vw) !important;
+		max-width: min(30rem, 90vw) !important;
 	}
 </style>

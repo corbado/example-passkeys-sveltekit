@@ -3,10 +3,10 @@
 - [3. Setting up fonts and global styles using Tailwind](#3-setting-up-fonts-and-global-styles-using-tailwind)
 - [4. Repository structure](#4-repository-structure)
 - [5. Setting up the Corbado web component for passkey authentication](#5-setting-up-the-corbado-web-component-for-passkey-authentication)
-  - [5.1 Setting up your Corbado account and project](#51-setting-up-your-corbado-account-and-project)
-  - [5.2 Including the web component in our frontend](#52-including-the-web-component-in-our-frontend)
-  - [5.3 Setting up the redirect logic](#53-setting-up-the-redirect-logic)
-  - [5.4 Using cookies to manage authentication state](#54-using-cookies-to-manage-authentication-state)
+	- [5.1 Setting up your Corbado account and project](#51-setting-up-your-corbado-account-and-project)
+	- [5.2 Including the web component in our frontend](#52-including-the-web-component-in-our-frontend)
+	- [5.3 Setting up the redirect logic](#53-setting-up-the-redirect-logic)
+	- [5.4 Using cookies to manage authentication state](#54-using-cookies-to-manage-authentication-state)
 - [6. Conclusion](#6-conclusion)
 
 ## 1. Introduction
@@ -39,10 +39,15 @@ pnpx svelte-add@latest tailwindcss
 pnpm i
 ```
 
-Lastly, we'll have to install Flowbite's svelte library
+Now, we'll have to install Flowbite's svelte library:
 
 ```bash
 pnpm i flowbite flowbite-svelte classnames @popperjs/core
+```
+
+Then, install the corbado web-js component:
+```bash
+pnpm i @corbado/web-js
 ```
 
 Finally, we'll update our `tailwind.config.cjs` to include Flowbite:

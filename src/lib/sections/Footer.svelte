@@ -1,7 +1,7 @@
 <script>
 	import corbado from '$lib/assets/corbado.png';
 	import github from '$lib/assets/github.png';
-	import slack from '$lib/assets/slack.png';
+	import slack from '$lib/assets/slack.webp';
 	import twitter from '$lib/assets/twitter.png';
 	import { A, FooterBrand, Heading, Img } from 'flowbite-svelte';
 </script>
