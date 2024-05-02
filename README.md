@@ -1,16 +1,20 @@
 # Svelte Passkey-First Authentication Example with Corbado
 
-This is a sample implementation of the Corbado web component being integrated into a web application built with Svelte.
+This is a sample implementation of the Corbado UI component and Node SDK being integrated into a web application built
+with Sveltekit.
 
-Please see the [full blog post](https://www.corbado.com/blog/svelte-passkeys) to understand the detailed steps needed to integrate passkeys into Svelte apps.
+Please see the [full blog post](https://www.corbado.com/blog/sveltekit-passkeys) to understand the detailed steps needed to
+integrate passkeys into Svelte apps.
 
 ## File structure
 
 - `src/routes/+page.svelte`: component for the sign up / login screen
-- `src/routes/profile/+page.svelte`: component for the user profile information that is shown after successful authentication
-- `src/routes/+layout.server.js`: file to switch SSR off (we're working on SSR support already)
-- `.env`: add Corbado project ID as environment variables that you can obtain
-  from [Corbado developer panel](https://app.corbado.com/signin#register)
+- `src/routes/profile/+page.server.ts`: Used to load user information on the server side
+- `src/routes/profile/+page.svelte`: component for the user profile information that is shown after successful
+  authentication
+- `src/routes/+layout.server.ts`: file to switch SSR off (we're working on SSR support already)
+- `.env`: add Corbado project ID and project secret as environment variables that you can obtain
+  from the [Corbado developer panel](https://app.corbado.com/signin#register)
 
 ## Setup
 
