@@ -1,44 +1,36 @@
-# SvelteKit Passkeys Example with Corbado Web Component
+# Svelte Passkey-First Authentication Example with Corbado
 
-This is a sample implementation of the Corbado web component being integrated into a web page built with SvelteKit to showcase passkey authentication. You can see the demo live on <https://passkeys.eu> or <https://passkeys.fr>.
+This is a sample implementation of the Corbado UI component and Node SDK being integrated into a web application built
+with Sveltekit.
 
-Please see the [full blog post](https://www.corbado.com/blog/sveltekit-passkeys) to understand all the required steps to integrate passkeys into SvelteKit apps.
+Please see the [full blog post](https://www.corbado.com/blog/sveltekit-passkeys) to understand the detailed steps needed to
+integrate passkeys into Svelte apps.
 
 ## File structure
 
-- `src/lib` contains reusable files such as `assets`, `components` or `sections` used in the app
-- `routes` contains the pages for the app
-  - `routes/api` contains the server-side api routes for the app
+- `src/routes/+page.svelte`: component for the sign up / login screen
+- `src/routes/profile/+page.server.ts`: Used to load user information on the server side
+- `src/routes/profile/+page.svelte`: component for the user profile information that is shown after successful
+  authentication
+- `src/routes/+layout.server.ts`: file to switch SSR off (we're working on SSR support already)
+- `.env`: add Corbado project ID and project secret as environment variables that you can obtain
+  from the [Corbado developer panel](https://app.corbado.com/signin#register)
 
 ## Setup
 
 ### Prerequisites
 
-Please follow the steps in [Getting started](https://docs.corbado.com/overview/getting-started) to create and configure a project in our [developer panel](https://app.corbado.com).
+Please follow the steps in [Getting started](https://docs.corbado.com/overview/getting-started) to create and configure
+a project in the [Corbado developer panel](https://app.corbado.com/signin#register).
 
-You need to have [Node](https://nodejs.org/en/download) and `pnpm` installed to run it. Run
-
-```bash
-npm i -g pnpm
-```
-
-to install pnpm once you have node set up.
-
-### Configure environment variables
-
-Use the values you obtained in [Prerequisites](#prerequisites) to configure the following variables inside an `.env` file you create in the root folder of this project:
-
-```sh
-CORBADO_API_SECRET=<YOUR SECRET>
-PUBLIC_CORBADO_PROJECT_ID=<YOUR PROJECT ID>
-```
+You need to have [Node](https://nodejs.org/en/download) and `npm` installed to run it.
 
 ## Usage
 
 Run
 
 ```bash
-pnpm i
+npm i
 ```
 
 to install all dependencies.
@@ -46,7 +38,5 @@ to install all dependencies.
 Finally, you can run the project locally with
 
 ```bash
-pnpm run dev
+npm run dev
 ```
-
-This will start the SvelteKit app on `localhost:5173` by default.
