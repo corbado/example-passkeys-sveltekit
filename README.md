@@ -1,4 +1,4 @@
-# Svelte Passkey-First Authentication Example with Corbado
+# Svelte Passkey Example App
 
 This is a sample implementation of the Corbado UI component and Node SDK being integrated into a web application built
 with Sveltekit.
