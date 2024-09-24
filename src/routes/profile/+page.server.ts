@@ -6,9 +6,8 @@ import { SDK, Config } from '@corbado/node-sdk';
 const config = new Config(PUBLIC_CORBADO_PROJECT_ID, CORBADO_API_SECRET);
 const sdk = new SDK(config);
 
-export async function load({ request }: RequestEvent) {
-    const cookies = parseCookies(request.headers.get('Cookie') || '');
-    const cbo_short_session: string | undefined = cookies.cbo_short_session;
+export async function load({ cookies }: RequestEvent) {
+    const cbo_short_session = cookies.get("cbo_short_session");
     if (!cbo_short_session) {
         return {user: undefined}
     }
