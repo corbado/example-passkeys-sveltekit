@@ -22,12 +22,3 @@ export async function load({ cookies }: RequestEvent) {
         return {user: undefined}
     }
 }
-
-function parseCookies(cookieHeader: string): Record<string, string> {
-    return Object.fromEntries(
-        cookieHeader.split(';').map((cookie) => {
-            const [name, ...rest] = cookie.trim().split('=');
-            return [name, rest.join('=')];
-        })
-    );
-}
