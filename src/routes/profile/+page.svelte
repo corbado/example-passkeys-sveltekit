@@ -20,7 +20,7 @@
             User-id: {data.user.userID}
         </p>
         <p>
-            Name: {data.user.email}
+            Name: {data.user.name}
         </p>
         <button on:click={handleLogout}>
             Logout
