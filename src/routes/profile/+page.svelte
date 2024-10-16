@@ -17,10 +17,10 @@
             Profile Page
         </h1>
         <p>
-            User-id: {data.user.userID}
+            User-ID: {data.user.userId}
         </p>
         <p>
-            Name: {data.user.email}
+            Full name: {data.user.fullName}
         </p>
         <button on:click={handleLogout}>
             Logout
