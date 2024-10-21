@@ -8,8 +8,7 @@
     onMount(async () => {
         await Corbado.load({
             projectId: PUBLIC_CORBADO_PROJECT_ID,
-            darkMode: 'off',
-            setShortSessionCookie: true
+            darkMode: 'off'
         });
         isInitialized = true; // Set to true once Corbado is initialized
     });
